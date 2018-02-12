@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.MobilePages.LivePage;
 import com.MobilePages.LoginPage;
 import com.Utils.AndroidSetUp;
 
@@ -54,6 +56,19 @@ public class E2MAppTestCases extends AndroidSetUp{
 		System.out.println("Executing : Login to your Account Test");
 		
 		new LoginPage(driver).accountLogin("zianzay@yopmail.com", "#e2m321");
+		
+	}
+	
+	
+	@Test(priority = 4)
+	public void socialWallTest() throws MalformedURLException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Social Wall Posting Test");
+		
+		new LivePage(driver).SocialWall("zianzay@yopmail.com", "#e2m321", "This Automation Test Comment");
+		
 		
 	}
 

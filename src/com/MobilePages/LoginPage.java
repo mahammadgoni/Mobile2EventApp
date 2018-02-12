@@ -16,15 +16,11 @@ public class LoginPage extends BaseSetUp{
 	
 	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
 	
-	By addTopic = By.id("ws.e2m.main:id/btn_right");
-	
-	By addComment = By.id("ws.e2m.main:id/et_comment");
-	
-	By submitComment = By.id("ws.e2m.main:id/et_comment");
-	
 	By menu = By.id("ws.e2m.main:id/btn_home");
 	
 	By profile = By.xpath("//android.widget.ImageView[@content-desc='Me']");
+	
+	By logoutBtn = By.xpath("//*[@text='Log out']");
 	
 	
 	public LoginPage(WebDriver driver) {
@@ -82,6 +78,16 @@ public class LoginPage extends BaseSetUp{
 	}
 	
 	public LoginPage accountLogout(){
+		
+		System.out.println("Logging out From Account");
+		
+		waitForClickabilityOf(menu);
+		
+		driver.findElement(menu).click();
+		
+		waitForClickabilityOf(logoutBtn);
+		
+		driver.findElement(logoutBtn).click();
 		
 		
 		return new LoginPage(driver);
