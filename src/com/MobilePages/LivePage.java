@@ -27,9 +27,9 @@ public class LivePage extends BaseSetUp{
 	
 	By addComment = By.id("ws.e2m.main:id/et_comment");
 	
-	By submitComment = By.id("ws.e2m.main:id/et_comment");
+	By submitComment = By.id("ws.e2m.main:id/tv_rightButton");
 	
-	By postedComment = By.xpath("//*[@resource-id='ws.e2m.main:id/tv_topic'][@instance='4']");
+	By postedComment = By.xpath("//*[@resource-id='ws.e2m.main:id/tv_topic' and @instance='4']");
 	
 
 
@@ -117,7 +117,11 @@ public class LivePage extends BaseSetUp{
 		
 		String PostedComment = driver.findElement(postedComment).getText();
 		
-		if (Comment==PostedComment) {
+//		System.out.println("Comment is : "+Comment);
+//		
+//		System.out.println("Posted Comment is : "+PostedComment);
+		
+		if (Comment.equals(PostedComment)) {
 			
 			System.out.println("Successfully Posted the Comment");
 			
