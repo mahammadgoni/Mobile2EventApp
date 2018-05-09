@@ -1,4 +1,4 @@
-package com.MobilePages;
+package com.LoginPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
