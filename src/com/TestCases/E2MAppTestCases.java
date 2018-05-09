@@ -30,46 +30,56 @@ public class E2MAppTestCases extends AndroidSetUp{
 		driver.quit();
 	}
 	
-	@Test(priority = 1)
-	public void uninstallAppTest(){
-		
-		System.out.println("Executing : Uninstall Application Test");
-		
-		uninstallApp();	
-		
-	}
+//	@Test(priority = 1)
+//	public void uninstallAppTest(){
+//		
+//		System.out.println("Executing : Uninstall Application Test");
+//		
+//		uninstallApp();	
+//		
+//	}
+//	
+//	@Test(priority = 2)
+//	public void installAppTest() throws MalformedURLException{
+//		
+//		System.out.println("Executing : Install Application Test");
+//				
+//		installApp();
+//		
+//	}
+//	
+//	@Test(priority = 3)
+//	public void loginToAccountTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Login to your Account Test");
+//		
+//		new LoginPage(driver).accountLogin("brucewills@yopmail.com", "#e2m321");
+//		
+//	}
 	
-	@Test(priority = 2)
-	public void installAppTest() throws MalformedURLException{
-		
-		System.out.println("Executing : Install Application Test");
-				
-		installApp();
-		
-	}
-	
-	@Test(priority = 3)
-	public void loginToAccountTest() throws MalformedURLException{
+	@Test(priority = 4)
+	public void forgotPasswordTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Login to your Account Test");
+		System.out.println("Executing : Forgot Password Test");
 		
 		new LoginPage(driver).accountLogin("brucewills@yopmail.com", "#e2m321");
 		
 	}
-	
-	
-	@Test(priority = 4)
-	public void socialWallTest() throws MalformedURLException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
-		
-		System.out.println("Executing : Social Wall Posting Test");
-		
-		new LivePage(driver).SocialWall("brucewills@yopmail.com", "#e2m321", "This is Automation Testing Comment");
-		
-		
-	}
+//	@Test(priority = 4)
+//	public void socialWallTest() throws MalformedURLException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Social Wall Posting Test");
+//		
+//		new LivePage(driver).SocialWall("brucewills@yopmail.com", "#e2m321", "This is Automation Testing Comment");
+//		
+//		
+//	}
 
 }
