@@ -26,6 +26,26 @@ public class LoginPage extends BaseSetUp{
 	
 	By logoutBtn = By.xpath("//*[@text='Log out']");
 	
+//	Change Password Elements
+	
+	By clickOnMe = By.xpath("//android.widget.ImageView[@content-desc='Me']");
+	
+	By myProfile = By.xpath("//android.widget.ImageView[@content-desc='My Profile']");
+	
+	By changePassword = By.id("ws.e2m.main:id/tv_chang_pass");
+	
+	By oldPassword = By.xpath("//*[@bounds='[66,492][696,591]']");
+	
+	By newPassword = By.xpath("//*[@bounds='[66,723][696,822]']");
+	
+	By confirmPassword = By.xpath("//*[@bounds='[66,954][696,1053]']");
+	
+	By successMessage = By.xpath("//*[@bounds='[147,528][933,918]']");
+	
+	By saveBtn = By.xpath("//android.widget.Button[@content-desc='Save']");
+	
+	
+	
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -160,16 +180,143 @@ public class LoginPage extends BaseSetUp{
 			System.out.println("Failed to Login with New Password");
 
 		}
-		
-		
-		
-		
-		
+	
 		
 		
 		return new LoginPage(driver);
 		
 	}
+
+//	Change Password Method
+	
+	public LoginPage changePassword(String userName,String password,String NewPassword) throws InterruptedException{
+		
+		System.out.println("Clicking on Your Email ");
+
+		waitForClickabilityOf(emailId);
+
+		driver.findElement(emailId).clear();
+
+		System.out.println("Entering the Email  :" + userName);
+
+		driver.findElement(emailId).sendKeys(userName);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Proceed Button ");
+
+		waitForClickabilityOf(proceedBtn1);
+
+		driver.findElement(proceedBtn1).click();
+		
+		Thread.sleep(2000);
+
+		System.out.println("Entering the Pin  :" + password);
+
+		waitForClickabilityOf(pass);
+		
+		driver.findElement(pass).clear();
+
+		driver.findElement(pass).sendKeys(password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Proceed Button ");
+
+		waitForClickabilityOf(proceedBtn2);
+
+		driver.findElement(proceedBtn2).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Menu Option ");
+		
+		waitForClickabilityOf(menu);
+
+		driver.findElement(menu).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Me Option ");
+		
+		waitForClickabilityOf(clickOnMe);
+
+		driver.findElement(clickOnMe).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on My Profile ");
+		
+		waitForClickabilityOf(myProfile);
+
+		driver.findElement(myProfile).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Change Password");
+		
+		waitForClickabilityOf(changePassword);
+
+		driver.findElement(changePassword).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering Old Password");
+		
+		waitForClickabilityOf(oldPassword);
+
+		driver.findElement(oldPassword).clear();
+		
+		driver.findElement(oldPassword).sendKeys(password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering New Password");
+		
+		waitForClickabilityOf(newPassword);
+
+		driver.findElement(newPassword).clear();
+		
+		driver.findElement(newPassword).sendKeys(NewPassword);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering Confirm Password");
+		
+		waitForClickabilityOf(confirmPassword);
+
+		driver.findElement(confirmPassword).clear();
+		
+		driver.findElement(confirmPassword).sendKeys(NewPassword);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Save Button");
+		
+		waitForClickabilityOf(saveBtn);
+
+		driver.findElement(saveBtn).click();
+		
+		Thread.sleep(2000);
+				
+		waitForClickabilityOf(successMessage);
+		
+		if (driver.findElement(successMessage).isDisplayed()==true) {
+			
+			System.out.println("Successfully Changed the Password");
+			
+		} else {
+			
+			System.out.println("Failed to Change the Password");
+
+		}
+				
+		
+		return new LoginPage(driver);
+		
+	}
+	
+	
 	
 //	Logout from Account Method
 	

@@ -20,14 +20,15 @@ public class E2MAppTestCases extends AndroidSetUp{
 	@BeforeClass
 	public void setUp() throws MalformedURLException{
 		
-		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
 	}
 	
 	@AfterClass
 	public void tearDown(){
 		
 		driver.quit();
+		
 	}
 	
 //	@Test(priority = 1)
@@ -58,15 +59,38 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new LoginPage(driver).accountLogin("brucewills@yopmail.com", "#e2m321");
 //		
 //	}
+//	
+//	@Test(priority = 4)
+//	public void forgotPasswordTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Forgot Password Test");
+//		
+//		new LoginPage(driver).forgotPassword("brucewills@yopmail.com", "#e2m321");
+//		
+//	}
 	
-	@Test(priority = 4)
-	public void forgotPasswordTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 5)
+	public void changePasswordTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Forgot Password Test");
+		System.out.println("Executing : Chanege Password Test");
 		
-		new LoginPage(driver).accountLogin("brucewills@yopmail.com", "#e2m321");
+		new LoginPage(driver).changePassword("brucewills@yopmail.com", "#e2m321","123456");
+		
+	}
+	
+	
+	@Test(priority = 6)
+	public void revertPasswordTest() throws MalformedURLException, InterruptedException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Revert Back to Default Password Test");
+		
+		new LoginPage(driver).changePassword("brucewills@yopmail.com", "123456","#e2m321");
 		
 	}
 		
