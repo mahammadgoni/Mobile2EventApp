@@ -1,7 +1,10 @@
 package com.LoginPage;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.BaseSetup.BaseSetUp;
 
@@ -43,6 +46,12 @@ public class LoginPage extends BaseSetUp{
 	By successMessage = By.xpath("//*[@bounds='[147,528][933,918]']");
 	
 	By saveBtn = By.xpath("//android.widget.Button[@content-desc='Save']");
+	
+//	Verify Home Page Elements 
+	
+	By noOfOptions = By.id("ws.e2m.main:id/item_image");
+	
+	
 	
 	
 	
@@ -311,6 +320,74 @@ public class LoginPage extends BaseSetUp{
 
 		}
 				
+		
+		return new LoginPage(driver);
+		
+	}
+	
+//	Verify Home Page Method
+	
+	public LoginPage homePageVerify(String userName,String password) throws InterruptedException{
+		
+		System.out.println("Clicking on Your Email ");
+
+		waitForClickabilityOf(emailId);
+
+		driver.findElement(emailId).clear();
+
+		System.out.println("Entering the Email  :" + userName);
+
+		driver.findElement(emailId).sendKeys(userName);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Proceed Button ");
+
+		waitForClickabilityOf(proceedBtn1);
+
+		driver.findElement(proceedBtn1).click();
+		
+		Thread.sleep(2000);
+
+		System.out.println("Entering the Pin  :" + password);
+
+		waitForClickabilityOf(pass);
+		
+		driver.findElement(pass).clear();
+
+		driver.findElement(pass).sendKeys(password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Proceed Button ");
+
+		waitForClickabilityOf(proceedBtn2);
+
+		driver.findElement(proceedBtn2).click();
+		
+		Thread.sleep(2000);
+		
+//		Storing No Of Existing Options
+		
+		waitForClickabilityOf(noOfOptions);
+		
+		List<WebElement> element = driver.findElements(noOfOptions);
+		
+		int NoOfExOptions = element.size();
+		
+		if (NoOfExOptions==10) {
+			
+			System.out.println("Home Page is Loaded and Verified Properly");
+			
+		} else {
+			
+			System.out.println("Failed to Load and Verify the Home Page");
+
+		}
+		
+		
+		
+		
 		
 		return new LoginPage(driver);
 		
