@@ -46,6 +46,8 @@ public class Schedule extends BaseSetUp{
 	
 	By addNote = By.id("ws.e2m.main:id/et_addnote_detail");
 	
+	By addNotePlusBtn = By.id("ws.e2m.main:id/btn_right");
+	
 	By saveNote = By.id("ws.e2m.main:id/btn_right");
 	
 	By askAQuestion = By.xpath("//*[@text='Ask A Question']");
@@ -62,6 +64,16 @@ public class Schedule extends BaseSetUp{
 	
 	By tracksTab = By.xpath("//*[@text='Tracks']");
 	
+	By liveMigration = By.xpath("//*[@text='Live Migration']");
+	
+	By platforms = By.xpath("//*[@text='Platforms']");
+	
+	By select1stTrackSesn = By.xpath("//*[@bounds='[0,558][1080,792]']");
+	
+	By select2ndTrackSesn = By.xpath("//*[@bounds='[0,795][1080,1029]']");
+	
+	By bookmark1st = By.xpath("//*[@content-desc='Remove bookmark']");
+		
 	By myAgendaTab = By.xpath("//*[@text='My Agenda']");
 	
 	
@@ -285,13 +297,248 @@ public class Schedule extends BaseSetUp{
 			System.out.println("Failed to Verify All Schedule Time Elements");
 
 		}
-		
-		
-				
+			
 		
 		
 		return new Schedule(driver);
 		
 	}
 
+//	Checking Tracks Method
+	
+	@SuppressWarnings("rawtypes")
+	public Schedule tracks(String userName,String password,String Notes,String Question,String Option) throws InterruptedException{
+		
+		commonActivity(userName, password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Tracks Tab");
+
+		waitForClickabilityOf(tracksTab);
+
+		driver.findElement(tracksTab).click();
+		
+		if (Option.equals("Live")) {
+						
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Live Migration");
+
+			waitForClickabilityOf(liveMigration);
+
+			driver.findElement(liveMigration).click();
+			
+		} else {
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Platforms");
+
+			waitForClickabilityOf(platforms);
+
+			driver.findElement(platforms).click();
+
+		}
+		
+		Thread.sleep(2000);
+		
+		boolean Bookmarked = driver.findElement(bookmark1st).isSelected();
+		
+//		System.out.println(Bookmarked);
+		
+		if (Bookmarked==true) {
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Session from Tracks Tab");
+
+			waitForClickabilityOf(select2ndTrackSesn);
+
+			driver.findElement(select2ndTrackSesn).click();
+			
+		} else {
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Session from Tracks Tab");
+
+			waitForClickabilityOf(select1stTrackSesn);
+
+			driver.findElement(select1stTrackSesn).click();
+
+		}
+				
+		Thread.sleep(2000);
+		
+		try {
+			
+			System.out.println("Bookmark This Session");
+
+			waitForClickabilityOf(bookmark);
+
+			driver.findElement(bookmark).click();
+			
+		} catch (Exception e) {
+			
+		}
+				
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Add To Calender");
+
+		waitForClickabilityOf(addToCalender);
+
+		driver.findElement(addToCalender).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Rate");
+
+		waitForClickabilityOf(rate);
+
+		driver.findElement(rate).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Close Rate Option");
+
+		waitForClickabilityOf(cancleRate);
+
+		driver.findElement(cancleRate).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Take Notes");
+
+		waitForClickabilityOf(takeNotes);
+
+		driver.findElement(takeNotes).click();
+		
+		Thread.sleep(2000);
+		
+		try {
+			
+			boolean AddNote = driver.findElement(addNote).isDisplayed();
+			
+			System.out.println(AddNote);
+			
+			if (AddNote==true) {
+				
+				System.out.println("Adding Notes");
+
+				Thread.sleep(2000);
+
+				waitForClickabilityOf(addNote);
+
+				driver.findElement(addNote).clear();
+				
+				driver.findElement(addNote).sendKeys(Notes);
+				
+			} else {
+				
+				System.out.println("Clicking On PLus Simbol to Add Note");
+				
+				Thread.sleep(2000);
+
+				waitForClickabilityOf(saveNote);
+
+				driver.findElement(saveNote).clear();
+				
+				driver.findElement(saveNote).sendKeys(Notes);
+
+			}
+			
+		} catch (Exception e) {
+			
+		}
+						
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Right Simbol to Save Note");
+
+		waitForClickabilityOf(saveNote);
+
+		driver.findElement(saveNote).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking Back Button");
+
+		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Add to Agenda");
+
+		waitForClickabilityOf(addToAgenda);
+
+		driver.findElement(addToAgenda).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Vote");
+
+		waitForClickabilityOf(vote);
+
+		driver.findElement(vote).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking Back Button");
+
+		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Ask Question");
+
+		waitForClickabilityOf(askAQuestion);
+
+		driver.findElement(askAQuestion).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Addding New Question");
+
+		waitForClickabilityOf(addQuestion);
+
+		driver.findElement(addQuestion).clear();
+		
+		driver.findElement(addQuestion).sendKeys(Question);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Ask to Add Question");
+
+		waitForClickabilityOf(saveQuestion);
+
+		driver.findElement(saveQuestion).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Close Rate Option");
+		
+		boolean CancleBtn = driver.findElement(cancleRate).isDisplayed();
+
+		driver.findElement(cancleRate).click();
+			
+		Thread.sleep(2000);	
+		
+		if (CancleBtn==true) {
+			
+			System.out.println("Successfully Verified All Schedule Tracks Elements");
+			
+		} else {
+			
+			System.out.println("Failed to Verify Schedule Tracks Elements");
+
+		}
+			
+		
+		return new Schedule(driver);
+		
+	}
+	
+	
 }

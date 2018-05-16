@@ -105,15 +105,37 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new LoginPage(driver).homePageVerify("brucewills@yopmail.com","#e2m321");
 //		
 //	}
+//	
+//	@Test(priority = 8)
+//	public void scheduleTimeTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Schedule Time Test");
+//		
+//		new Schedule(driver).time("brucewills@yopmail.com","#e2m321", "This is Automation Testing Notes", "Are you adding questions through Automation?");
+//		
+//	}
 	
-	@Test(priority = 7)
-	public void scheduleTimeTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 9)
+	public void scheduleTracksLiveTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Schedule Time Test");
+		System.out.println("Executing : Schedule Tracks Live Test");
 		
-		new Schedule(driver).time("brucewills@yopmail.com","#e2m321", "This is Automation Testing Notes", "Are you adding questions through Automation?");
+		new Schedule(driver).tracks("brucewills@yopmail.com","#e2m321", "This is Automation Testing Live Track Session Note", "Is this Live tracks Session?","Live");
+		
+	}
+	
+	@Test(priority = 10)
+	public void scheduleTracksPlatformsTest() throws MalformedURLException, InterruptedException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Schedule Tracks Platforms Test");
+		
+		new Schedule(driver).tracks("brucewills@yopmail.com","#e2m321", "This is Automation Testing Platforms Track Session Note", "Is this Platforms tracks Session?","Platforms");
 		
 	}
 		
