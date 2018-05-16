@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Agenda.Schedule;
 import com.LoginPage.LivePage;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
@@ -93,15 +94,26 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new LoginPage(driver).changePassword("brucewills@yopmail.com", "123456","#e2m321");
 //		
 //	}
+//	
+//	@Test(priority = 7)
+//	public void homePageVerifyTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Home Page Verify Test");
+//		
+//		new LoginPage(driver).homePageVerify("brucewills@yopmail.com","#e2m321");
+//		
+//	}
 	
 	@Test(priority = 7)
-	public void homePageVerifyTest() throws MalformedURLException, InterruptedException{
+	public void scheduleTimeTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Home Page Verify Test");
+		System.out.println("Executing : Schedule Time Test");
 		
-		new LoginPage(driver).homePageVerify("brucewills@yopmail.com","#e2m321");
+		new Schedule(driver).time("brucewills@yopmail.com","#e2m321", "This is Automation Testing Notes", "Are you adding questions through Automation?");
 		
 	}
 		
