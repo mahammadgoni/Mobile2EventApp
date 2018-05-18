@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.Agenda.Schedule;
+import com.Agenda.Speakers;
 import com.LoginPage.LivePage;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
@@ -31,7 +32,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		driver.quit();
 		
 	}
-	
+//	
 //	@Test(priority = 1)
 //	public void uninstallAppTest(){
 //		
@@ -138,18 +139,30 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new Schedule(driver).tracks("brucewills@yopmail.com","#e2m321", "This is Automation Testing Platforms Track Session Note", "Is this Platforms tracks Session?","Platforms");
 //		
 //	}
+//	
+//	@Test(priority = 11)
+//	public void scheduleMyAgendaTabTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Schedule My Agenda Tab Test");
+//		
+//		new Schedule(driver).myAgenda("brucewills@yopmail.com","#e2m321", "This is Automation Testing My Agenda Session Note", "Is this My Agenda Session?");
+//		
+//	}
 	
-	@Test(priority = 11)
-	public void scheduleMyAgendaTabTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 12)
+	public void speakerDetailsTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Schedule My Agenda Tab Test");
+		System.out.println("Executing : Speaker Details Test");
 		
-		new Schedule(driver).myAgenda("brucewills@yopmail.com","#e2m321", "This is Automation Testing My Agenda Session Note", "Is this My Agenda Session?");
+		new Speakers(driver).speakerDetails("brucewills@yopmail.com","#e2m321");
 		
 	}
-		
+	
+//		
 //	@Test(priority = 4)
 //	public void socialWallTest() throws MalformedURLException{
 //		
