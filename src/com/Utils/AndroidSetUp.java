@@ -15,9 +15,9 @@ public class AndroidSetUp {
 
 	String activityName = "ws.e2m.main.screens.SplashScreen";
 	
-	String apkPath = "/Users/goni/Documents/workspace/WebSpiders/Event2MobileApp/APP's/e2m_V5.0_UAT.apk";
+//	String apkPath = "/Users/goni/Documents/workspace/WebSpiders/Event2MobileApp/APP's/e2m_V5.0_UAT.apk";
 	
-//	String apkPath = "/Users/goni/Documents/workspace/WebSpiders/Event2MobileApp/APP's/e2m_Generic_V5.0_Root_LIVE.apk";
+	String apkPath = "/Users/goni/Documents/workspace/WebSpiders/Event2MobileApp/APP's/e2m_Generic_V5.0_Root_LIVE.apk";
 
 
 	@SuppressWarnings("rawtypes")
