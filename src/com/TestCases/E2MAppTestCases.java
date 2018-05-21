@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Agenda.Exhibitors;
 import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.LoginPage.LivePage;
@@ -150,15 +151,27 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new Schedule(driver).myAgenda("brucewills@yopmail.com","#e2m321", "This is Automation Testing My Agenda Session Note", "Is this My Agenda Session?");
 //		
 //	}
+//	
+//	@Test(priority = 12)
+//	public void speakerDetailsTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Speaker Details Test");
+//		
+//		new Speakers(driver).speakerDetails("brucewills@yopmail.com","#e2m321");
+//		
+//	}
 	
-	@Test(priority = 12)
-	public void speakerDetailsTest() throws MalformedURLException, InterruptedException{
+	
+	@Test(priority = 13)
+	public void exhibitorNameTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Speaker Details Test");
+		System.out.println("Executing : Exhibitor Name Test");
 		
-		new Speakers(driver).speakerDetails("brucewills@yopmail.com","#e2m321");
+		new Exhibitors(driver).exhibitorsName("brucewills@yopmail.com","#e2m321");
 		
 	}
 	
