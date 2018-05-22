@@ -163,7 +163,6 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //	}
 	
-	
 	@Test(priority = 13)
 	public void exhibitorNameTest() throws MalformedURLException, InterruptedException{
 		
@@ -172,6 +171,17 @@ public class E2MAppTestCases extends AndroidSetUp{
 		System.out.println("Executing : Exhibitor Name Test");
 		
 		new Exhibitors(driver).exhibitorsName("brucewills@yopmail.com","#e2m321");
+		
+	}
+	
+	@Test(priority = 14)
+	public void exhibitorTypeTest() throws MalformedURLException, InterruptedException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Exhibitor Type Test");
+		
+		new Exhibitors(driver).exhibitorType("brucewills@yopmail.com","#e2m321");
 		
 	}
 	

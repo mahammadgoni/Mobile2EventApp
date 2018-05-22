@@ -2,7 +2,6 @@ package com.Agenda;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import com.BaseSetup.BaseSetUp;
 
 public class Exhibitors extends BaseSetUp{
@@ -29,11 +28,21 @@ public class Exhibitors extends BaseSetUp{
 	
 	By clickOnExhibitors = By.xpath("//*[@text='Exhibitors']");
 	
+	By clickOnType = By.xpath("//*[@text='Type']");
+	
+	By clickOnSaveToContact = By.xpath("//*[@content-desc='Save to contacts']");
+	
 	By exhibitorOne = By.xpath("//*[@bounds='[2,567][1080,785]']");
 	
 	By exhibitorName = By.xpath("//*[@bounds='[204,606][349,671]']");
 	
+	By exhibitorTypeName = By.xpath("//*[@bounds='[204,612][321,677]']");
+	
 	By exhibitorOneName = By.xpath("//*[@bounds='[237,340][826,413]']");
+	
+	By clickOnBookmark = By.xpath("//*[@content-desc='Add bookmark']");
+	
+	By clickOnWebsite = By.xpath("//*[@content-desc='Website']");
 	
 	By exhibitorType = By.xpath("//*[@bounds='[237,462][826,511]']");
 	
@@ -110,7 +119,7 @@ public class Exhibitors extends BaseSetUp{
 		
 	}
 	
-//	Exhibitors Name Test Method
+//	Exhibitor Name Test Method
 	
 	public Exhibitors exhibitorsName(String userName,String password) throws InterruptedException{
 		
@@ -136,11 +145,49 @@ public class Exhibitors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		String ExbtrType = driver.findElement(exhibitorType).getText();	
+		System.out.println("Clicking on Save Contact");
+
+		waitForClickabilityOf(clickOnSaveToContact);
+
+		driver.findElement(clickOnSaveToContact).click();
 		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Bookmark Exhibitor");
+
+		waitForClickabilityOf(clickOnBookmark);
+
+		driver.findElement(clickOnBookmark).click();
+		
+		Thread.sleep(2000);
+		
+		try {
+			
+			System.out.println("Clicking on Exhibitor Website");
+
+			waitForClickabilityOf(clickOnWebsite);
+
+			driver.findElement(clickOnWebsite).click();
+			
+//			Going Back to Exhibitor
+			
+			Thread.sleep(2000);
+			
+			driver.navigate().back();
+					
+		} catch (Exception e) {
+			
+		}
+		
+//		Thread.sleep(2000);
+				
+//		String ExbtrType = driver.findElement(exhibitorType).getText();	
+		
+		Thread.sleep(2000);
+				
 		System.out.println("Exhibitor Name  : "+ExbtrOne1);
 		
-		System.out.println("Exhibitor Type  : "+ExbtrType);
+//		System.out.println("Exhibitor Type  : "+ExbtrType);
 		
 //		Verifying the Exhibitors Details
 		
@@ -158,6 +205,94 @@ public class Exhibitors extends BaseSetUp{
 		
 		return new Exhibitors(driver);
 		
+	}
+	
+//	Exhibitor Type Test Method
+	
+	public Exhibitors exhibitorType(String userName,String password) throws InterruptedException{
+		
+		commonActivity(userName, password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Exhibitor Type");
+
+		waitForClickabilityOf(clickOnType);
+
+		driver.findElement(clickOnType).click();
+		
+		Thread.sleep(2000);
+		
+		String ExbtrOne = driver.findElement(exhibitorTypeName).getText();		
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on 1st Exhibitor");
+
+		waitForClickabilityOf(exhibitorTypeName);
+
+		driver.findElement(exhibitorTypeName).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Checking the Exhibitor Details");
+		
+		String ExbtrOne1 = driver.findElement(exhibitorOneName).getText();	
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Save Contact");
+
+		waitForClickabilityOf(clickOnSaveToContact);
+
+		driver.findElement(clickOnSaveToContact).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Bookmark Exhibitor");
+
+		waitForClickabilityOf(clickOnBookmark);
+
+		driver.findElement(clickOnBookmark).click();
+		
+//		Thread.sleep(2000);
+			
+//		String ExbtrType = driver.findElement(exhibitorType).getText();	
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Exhibitor Website");
+
+		waitForClickabilityOf(clickOnWebsite);
+
+		driver.findElement(clickOnWebsite).click();
+		
+//		Going Back to Exhibitor
+		
+		Thread.sleep(2000);
+		
+		driver.navigate().back();
+	
+		Thread.sleep(2000);
+		
+		System.out.println("Exhibitor Name  : "+ExbtrOne1);
+		
+//		System.out.println("Exhibitor Type  : "+ExbtrType);
+		
+//		Verifying the Exhibitors Details
+		
+		if (ExbtrOne.equals(ExbtrOne1)) {
+			
+			System.out.println("Successfully Verified the Exhibitors Type");
+			
+		} else {
+			
+			System.out.println("Failed to Verify the Exhibitors Type");
+
+		}
+		
+		
+		return new Exhibitors(driver);
 	}
 
 
