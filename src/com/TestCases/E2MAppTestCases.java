@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.Agenda.Exhibitors;
 import com.Agenda.Schedule;
 import com.Agenda.Speakers;
+import com.Agenda.Sponsors;
 import com.LoginPage.LivePage;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
@@ -162,26 +163,48 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new Speakers(driver).speakerDetails("brucewills@yopmail.com","#e2m321");
 //		
 //	}
+//	
+//	@Test(priority = 13)
+//	public void exhibitorNameTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Exhibitor Name Test");
+//		
+//		new Exhibitors(driver).exhibitorsName("brucewills@yopmail.com","#e2m321");
+//		
+//	}
+//	
+//	@Test(priority = 14)
+//	public void exhibitorTypeTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Exhibitor Type Test");
+//		
+//		new Exhibitors(driver).exhibitorType("brucewills@yopmail.com","#e2m321");
+//		
+//	}
 	
-	@Test(priority = 13)
-	public void exhibitorNameTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 15)
+	public void sponsorsNameTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Exhibitor Name Test");
+		System.out.println("Executing : Sponsors Name Test");
 		
-		new Exhibitors(driver).exhibitorsName("brucewills@yopmail.com","#e2m321");
+		new Sponsors(driver).sponsorsName("brucewills@yopmail.com","#e2m321");
 		
 	}
 	
-	@Test(priority = 14)
-	public void exhibitorTypeTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 16)
+	public void sponsorsTypeTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Exhibitor Type Test");
+		System.out.println("Executing : Sponsors Type Test");
 		
-		new Exhibitors(driver).exhibitorType("brucewills@yopmail.com","#e2m321");
+		new Sponsors(driver).sponsorsType("brucewills@yopmail.com","#e2m321");
 		
 	}
 	
