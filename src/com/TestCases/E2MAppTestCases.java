@@ -9,6 +9,7 @@ import com.Agenda.Exhibitors;
 import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
+import com.Agenda.Survey;
 import com.LoginPage.LivePage;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
@@ -185,26 +186,73 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new Exhibitors(driver).exhibitorType("brucewills@yopmail.com","#e2m321");
 //		
 //	}
+//	
+//	@Test(priority = 15)
+//	public void sponsorsNameTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Sponsors Name Test");
+//		
+//		new Sponsors(driver).sponsorsName("brucewills@yopmail.com","#e2m321");
+//		
+//	}
+//	
+//	@Test(priority = 16)
+//	public void sponsorsTypeTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Sponsors Type Test");
+//		
+//		new Sponsors(driver).sponsorsType("brucewills@yopmail.com","#e2m321");
+//		
+//	}
+//	
+//	@Test(priority = 17)
+//	public void dropdownPollsTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Drop Down Polls/Survey Test");
+//		
+//		new Survey(driver).surveyDropdownPoll("brucewills@yopmail.com","#e2m321");
+//		
+//	}
+//	
+//	
+//	@Test(priority = 18)
+//	public void freeTextPollsTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Free Text Polls/Survey Test");
+//		
+//		new Survey(driver).surveyFreeTextPoll("brucewills@yopmail.com","#e2m321");
+//		
+//	}
 	
-	@Test(priority = 15)
-	public void sponsorsNameTest() throws MalformedURLException, InterruptedException{
+	
+	@Test(priority = 19)
+	public void multiplePollsTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Sponsors Name Test");
+		System.out.println("Executing : Multiple Polls/Survey Test");
 		
-		new Sponsors(driver).sponsorsName("brucewills@yopmail.com","#e2m321");
+		new Survey(driver).surveyMultiplePoll("brucewills@yopmail.com","#e2m321");
 		
 	}
 	
-	@Test(priority = 16)
-	public void sponsorsTypeTest() throws MalformedURLException, InterruptedException{
+	
+	@Test(priority = 20)
+	public void singlePollsTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Sponsors Type Test");
+		System.out.println("Executing : Single Polls/Survey Test");
 		
-		new Sponsors(driver).sponsorsType("brucewills@yopmail.com","#e2m321");
+		new Survey(driver).surveySinglePoll("brucewills@yopmail.com","#e2m321");
 		
 	}
 	
