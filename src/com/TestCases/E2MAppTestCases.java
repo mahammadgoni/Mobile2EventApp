@@ -4,13 +4,13 @@ import java.net.MalformedURLException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.Agenda.Exhibitors;
 import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
-import com.LoginPage.LivePage;
+import com.LIve.Attendees;
+import com.LIve.SocialWall;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
 
@@ -231,42 +231,53 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new Survey(driver).surveyFreeTextPoll("brucewills@yopmail.com","#e2m321");
 //		
 //	}
-	
-	
-	@Test(priority = 19)
-	public void multiplePollsTest() throws MalformedURLException, InterruptedException{
-		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
-		
-		System.out.println("Executing : Multiple Polls/Survey Test");
-		
-		new Survey(driver).surveyMultiplePoll("brucewills@yopmail.com","#e2m321");
-		
-	}
-	
-	
-	@Test(priority = 20)
-	public void singlePollsTest() throws MalformedURLException, InterruptedException{
-		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
-		
-		System.out.println("Executing : Single Polls/Survey Test");
-		
-		new Survey(driver).surveySinglePoll("brucewills@yopmail.com","#e2m321");
-		
-	}
-	
-//		
-//	@Test(priority = 4)
-//	public void socialWallTest() throws MalformedURLException{
+//	
+//	
+//	@Test(priority = 19)
+//	public void multiplePollsTest() throws MalformedURLException, InterruptedException{
 //		
 //		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 //		
-//		System.out.println("Executing : Social Wall Posting Test");
+//		System.out.println("Executing : Multiple Polls/Survey Test");
 //		
-//		new LivePage(driver).SocialWall("brucewills@yopmail.com", "#e2m321", "This is Automation Testing Comment");
-//		
+//		new Survey(driver).surveyMultiplePoll("brucewills@yopmail.com","#e2m321");
 //		
 //	}
+//	
+//	
+//	@Test(priority = 20)
+//	public void singlePollsTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Single Polls/Survey Test");
+//		
+//		new Survey(driver).surveySinglePoll("brucewills@yopmail.com","#e2m321");
+//		
+//	}
+	
+	@Test(priority = 21)
+	public void attendeeDetailsTest() throws MalformedURLException, InterruptedException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Attendee Details Test");
+		
+		new Attendees(driver).attendeeDetails("brucewills@yopmail.com","#e2m321", "Two");
+		
+	}
+	
+		
+	@Test(priority = 22)
+	public void socialWallTest() throws MalformedURLException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Social Wall Posting Test");
+		
+		new SocialWall(driver).socialWall("brucewills@yopmail.com", "#e2m321", "This is Automation Testing Comment");
+		
+		
+	}
 
 }

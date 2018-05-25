@@ -1,11 +1,12 @@
-package com.LoginPage;
+package com.LIve;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.BaseSetup.BaseSetUp;
 
-public class LivePage extends BaseSetUp{
+public class SocialWall extends BaseSetUp{
+	
 	
 	By emailId = By.id("ws.e2m.main:id/et_email");
 	
@@ -32,10 +33,9 @@ public class LivePage extends BaseSetUp{
 	By postedComment = By.xpath("//*[@resource-id='ws.e2m.main:id/tv_topic' and @instance='4']");
 	
 
-
-	public LivePage(WebDriver driver) {
+	public SocialWall(WebDriver driver) {
 		super(driver);
-		
+
 	}
 	
 //	This Login Method will perform Login actions,Just need to call it in Method
@@ -74,8 +74,7 @@ public class LivePage extends BaseSetUp{
 		
 	}
 	
-	
-	public LivePage SocialWall(String userName,String password,String Comment){
+	public SocialWall socialWall(String userName,String password,String Comment){
 		
 		Login(userName, password);
 		
@@ -132,8 +131,9 @@ public class LivePage extends BaseSetUp{
 		}
 	
 		
-		return new LivePage(driver);
+		return new SocialWall(driver);
 		
 	}
+	
 
 }
