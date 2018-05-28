@@ -1,4 +1,4 @@
-package com.LIve;
+package com.Live;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
