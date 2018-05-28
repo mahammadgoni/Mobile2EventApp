@@ -10,6 +10,7 @@ import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
 import com.Live.Attendees;
+import com.Live.OneToOneMessage;
 import com.Live.SocialWall;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
@@ -255,27 +256,39 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new Survey(driver).surveySinglePoll("brucewills@yopmail.com","#e2m321");
 //		
 //	}
+//	
+//	@Test(priority = 21)
+//	public void attendeeDetailsTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Attendee Details Test");
+//		
+//		new Attendees(driver).attendeeDetails("brucewills@yopmail.com","#e2m321", "Two");
+//		
+//	}
+//	
+//		
+//	@Test(priority = 22)
+//	public void socialWallTest() throws MalformedURLException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Social Wall Posting Test");
+//		
+//		new SocialWall(driver).socialWall("brucewills@yopmail.com", "#e2m321", "This is Automation Testing Comment");
+//		
+//		
+//	}
 	
-	@Test(priority = 21)
-	public void attendeeDetailsTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 23)
+	public void oneToOneMsgTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Attendee Details Test");
+		System.out.println("Executing : One To One Message Test");
 		
-		new Attendees(driver).attendeeDetails("brucewills@yopmail.com","#e2m321", "Two");
-		
-	}
-	
-		
-	@Test(priority = 22)
-	public void socialWallTest() throws MalformedURLException{
-		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
-		
-		System.out.println("Executing : Social Wall Posting Test");
-		
-		new SocialWall(driver).socialWall("brucewills@yopmail.com", "#e2m321", "This is Automation Testing Comment");
+		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com", "#e2m321", "This Auto First O2O Message");
 		
 		
 	}
