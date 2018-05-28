@@ -9,8 +9,8 @@ import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
-import com.LIve.Attendees;
-import com.LIve.SocialWall;
+import com.Live.Attendees;
+import com.Live.SocialWall;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
 
