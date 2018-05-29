@@ -11,6 +11,7 @@ import com.Agenda.Sponsors;
 import com.Agenda.Survey;
 import com.Live.Attendees;
 import com.Live.OneToOneMessage;
+import com.Live.PhotoWall;
 import com.Live.SocialWall;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
@@ -280,17 +281,28 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
-	
-	@Test(priority = 23)
-	public void oneToOneMsgTest() throws MalformedURLException, InterruptedException{
+//	
+//	@Test(priority = 23)
+//	public void oneToOneMsgTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : One To One Message Test");
+//		
+//		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com", "#e2m321", "This Auto First O2O Message");
+//		
+//		
+//	}
+
+	@Test(priority = 24)
+	public void photoWallTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : One To One Message Test");
+		System.out.println("Executing : Photo Wall Test");
 		
-		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com", "#e2m321", "This Auto First O2O Message");
+		new PhotoWall(driver).photoUpload("brucewills@yopmail.com", "#e2m321", 10, "Automation Image Caption");
 		
 		
 	}
-
 }
