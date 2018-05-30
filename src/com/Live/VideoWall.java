@@ -1,5 +1,7 @@
 package com.Live;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -26,9 +28,29 @@ public class VideoWall extends BaseSetUp{
 	
 	By clickOnLive = By.xpath("//android.widget.ImageView[@content-desc='Live']");
 	
-	By clickOnPhotoWall = By.xpath("//*[@content-desc='PhotoWall']");
+	By clickOnVideoWall = By.xpath("//*[@content-desc='VideoWall']");
 	
-	By clickOnCamera = By.xpath("//*[@content-desc='Upload Photo']");
+	By clickOnVideo = By.xpath("//*[@content-desc='Upload Video']");
+	
+	By proceedBtn = By.id("ws.e2m.main:id/btn_record_procced");
+	
+	By takeVideo = By.id("ws.e2m.main:id/upld_vid_take");
+	
+	By clickOnRecord = By.xpath("//*[@content-desc='Record']");
+	
+	By clickOnSave = By.xpath("//*[@content-desc='Save']");
+	
+	By videoCaption = By.id("ws.e2m.main:id/edt_UV_caption");
+	
+	By uploadBtn = By.id("ws.e2m.main:id/tv_rightButton");
+	
+	By existingVideo = By.id("ws.e2m.main:id/upld_vid_lib");
+	
+	By select1stVideo = By.xpath("//*[@bounds='[6,156][358,516]']");
+	
+	By listView = By.xpath("//*[@content-desc='List view']");
+	
+	By justNow = By.xpath("//*[@text='Just now']");
 	
 
 	public VideoWall(WebDriver driver) {
@@ -94,12 +116,136 @@ public class VideoWall extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Photo Wall");
+		System.out.println("Clicking on Video Wall");
 
-		waitForClickabilityOf(clickOnPhotoWall);
+		waitForClickabilityOf(clickOnVideoWall);
 
-		driver.findElement(clickOnPhotoWall).click();
+		driver.findElement(clickOnVideoWall).click();
 		
+	}
+	
+	public VideoWall videoUpload(String userName,String password,boolean Take,String Caption) throws InterruptedException{
+		
+		commonActivity(userName, password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Video Symbol");
+
+		waitForClickabilityOf(clickOnVideo);
+
+		driver.findElement(clickOnVideo).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Proceed Button");
+
+		waitForClickabilityOf(proceedBtn);
+
+		driver.findElement(proceedBtn).click();
+		
+		if (Take==true) {
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Take Video");
+
+			waitForClickabilityOf(takeVideo);
+
+			driver.findElement(takeVideo).click();
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Record Button to start video");
+
+			waitForClickabilityOf(clickOnRecord);
+
+			driver.findElement(clickOnRecord).click();
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Recording Video now");
+			
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+			System.out.println("Clicking on Stop Button ");
+
+			waitForClickabilityOf(clickOnRecord);
+
+			driver.findElement(clickOnRecord).click();
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Save Button");
+
+			waitForClickabilityOf(clickOnSave);
+
+			driver.findElement(clickOnSave).click();
+			
+		} else {
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Clicking on Existing Video");
+
+			waitForClickabilityOf(existingVideo);
+
+			driver.findElement(existingVideo).click();
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Selecting the Video");
+
+			waitForClickabilityOf(select1stVideo);
+
+			driver.findElement(select1stVideo).click();
+
+		}
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering the Video Caption");
+
+		waitForClickabilityOf(videoCaption);
+
+		driver.findElement(videoCaption).clear();
+		
+		driver.findElement(videoCaption).sendKeys(Caption);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Uploading the Video");
+
+		waitForClickabilityOf(uploadBtn);
+
+		driver.findElement(uploadBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On List View");
+
+		waitForClickabilityOf(listView);
+
+		driver.findElement(listView).click();
+		
+		Thread.sleep(2000);
+		
+		boolean Video = driver.findElement(justNow).isDisplayed();
+
+		Thread.sleep(2000);
+		
+		if (Video==true) {
+			
+			System.out.println("Successfully Uploaded the Video");
+			
+		} else {
+			
+			System.out.println("Failed to Upload the Video");
+
+		}
+		
+		
+		return new VideoWall(driver);
 	}
 
 }

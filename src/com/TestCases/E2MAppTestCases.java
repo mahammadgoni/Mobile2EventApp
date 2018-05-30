@@ -10,9 +10,11 @@ import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
 import com.Live.Attendees;
+import com.Live.LeaderBoard;
 import com.Live.OneToOneMessage;
 import com.Live.PhotoWall;
 import com.Live.SocialWall;
+import com.Live.VideoWall;
 import com.LoginPage.LoginPage;
 import com.Utils.AndroidSetUp;
 
@@ -293,16 +295,56 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
+//
+//	@Test(priority = 24)
+//	public void photoWallTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Photo Wall Test");
+//		
+//		new PhotoWall(driver).photoUpload("brucewills@yopmail.com", "#e2m321", 10, "Automation Image Caption");
+//		
+//		
+//	}
+//
+//	@Test(priority = 25)
+//	public void videoRecordUploadTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Recoding Video Uploading Test");
+//		
+//		new VideoWall(driver).videoUpload("brucewills@yopmail.com", "#e2m321", true, "Recorded Video");
+//		
+//		
+//	}
+//	
+//	@Test(priority = 26)
+//	public void videoExistUploadTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Existing Video Uploading Test");
+//		
+//		new VideoWall(driver).videoUpload("brucewills@yopmail.com", "#e2m321", false, "Existing Video");
+//		
+//		
+//	}
+	
 
-	@Test(priority = 24)
-	public void photoWallTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 27)
+	public void leaderBoardDetailsTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Photo Wall Test");
+		System.out.println("Executing : Leader Board Details Test");
 		
-		new PhotoWall(driver).photoUpload("brucewills@yopmail.com", "#e2m321", 10, "Automation Image Caption");
+		new LeaderBoard(driver).leaderBoardDetails("brucewills@yopmail.com", "#e2m321");
 		
 		
 	}
+	
+	
+	
 }
