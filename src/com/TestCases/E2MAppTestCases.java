@@ -10,6 +10,7 @@ import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
 import com.Live.Attendees;
+import com.Live.EventQA;
 import com.Live.LeaderBoard;
 import com.Live.OneToOneMessage;
 import com.Live.PhotoWall;
@@ -331,16 +332,27 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
+//	
+//	@Test(priority = 27)
+//	public void leaderBoardDetailsTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Leader Board Details Test");
+//		
+//		new LeaderBoard(driver).leaderBoardDetails("brucewills@yopmail.com", "#e2m321");
+//		
+//		
+//	}
 	
-
-	@Test(priority = 27)
-	public void leaderBoardDetailsTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 28)
+	public void eventQATest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Leader Board Details Test");
+		System.out.println("Executing : Event QA Test");
 		
-		new LeaderBoard(driver).leaderBoardDetails("brucewills@yopmail.com", "#e2m321");
+		new EventQA(driver).eventQA("brucewills@yopmail.com", "#e2m321", "Is this an Automation Session?");
 		
 		
 	}

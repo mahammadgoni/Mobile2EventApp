@@ -21,7 +21,7 @@ public class LeaderBoard extends BaseSetUp{
 	
 	By menu = By.id("ws.e2m.main:id/btn_home");
 	
-//	Video Wall Elements
+//	Leader Board Elements
 	
 	By clickOnLive = By.xpath("//*[@content-desc='Live']");
 	
@@ -29,11 +29,11 @@ public class LeaderBoard extends BaseSetUp{
 	
 	By usersTab = By.xpath("//*[@text='Users']");
 	
-	By usersPoints = By.id("//*[@bounds='[210,524][441,644]']");
+	By usersPoints = By.id("ws.e2m.main:id/tvScore");
 	
 	By groupTab = By.xpath("//*[@text='Group']");
 	
-	By groupPoints = By.id("//*[@bounds='[60,524][291,644]");
+	By groupPoints = By.id("ws.e2m.main:id/tvScore");
 	
 	By myAchievementsTab = By.xpath("//*[@text='MyAchievements']");
 	
@@ -124,7 +124,7 @@ public class LeaderBoard extends BaseSetUp{
 		commonActivity(userName, password);
 		
 		Thread.sleep(2000);
-		
+				
 		waitForClickabilityOf(usersPoints);
 		
 		String UserPoints = driver.findElement(usersPoints).getText();
@@ -179,9 +179,11 @@ public class LeaderBoard extends BaseSetUp{
 		
 		System.out.println("My Activity  : "+Activity2);
 		
+		String Total = UserPoints+" Points";
+		
 //		Verify the Condition
 		
-		if (UserPoints.equals(MyPoints)) {
+		if (Total.equals(MyPoints)) {
 			
 			System.out.println("Successfully Verified Leader Board Details");
 			
