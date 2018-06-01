@@ -126,6 +126,10 @@ public class EventQA extends BaseSetUp{
 
 		driver.findElement(btnSubmit).click();
 		
+		Thread.sleep(2000);
+		
+		System.out.println("Successfully Posted the Question");
+		
 		
 		
 		return new EventQA(driver);
