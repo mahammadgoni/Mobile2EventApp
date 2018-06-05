@@ -18,6 +18,8 @@ import com.Live.PlayCenter;
 import com.Live.SocialWall;
 import com.Live.VideoWall;
 import com.LoginPage.LoginPage;
+import com.Me.Bookmarks;
+import com.Me.Notes;
 import com.Utils.AndroidSetUp;
 
 public class E2MAppTestCases extends AndroidSetUp{
@@ -357,39 +359,63 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
+//	
+//	@Test(priority = 29)
+//	public void quizMapTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Quiz Map Test");
+//		
+//		new PlayCenter(driver).quizMap("brucewills@yopmail.com", "#e2m321");
+//		
+//		
+//	}
+//	
+//	@Test(priority = 30)
+//	public void makingFriendMapTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Making Friend Map Test");
+//		
+//		new PlayCenter(driver).makingFriendMap("brucewills@yopmail.com", "#e2m321");
+//		
+//		
+//	}
+//	
+//	@Test(priority = 31)
+//	public void locationMapTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Location Map Test");
+//		
+//		new PlayCenter(driver).locationMap("brucewills@yopmail.com", "#e2m321");
+//		
+//		
+//	}
+//	
+//	@Test(priority = 32)
+//	public void bookmarksTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Bookmarks Check Test");
+//		
+//		new Bookmarks(driver).bookmarked("brucewills@yopmail.com", "#e2m321");
+//		
+//		
+//	}
 	
-	@Test(priority = 29)
-	public void quizMapTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 33)
+	public void addNoteTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Quiz Map Test");
+		System.out.println("Executing : Bookmarks Check Test");
 		
-		new PlayCenter(driver).quizMap("brucewills@yopmail.com", "#e2m321");
-		
-		
-	}
-	
-	@Test(priority = 30)
-	public void makingFriendMapTest() throws MalformedURLException, InterruptedException{
-		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
-		
-		System.out.println("Executing : Making Friend Map Test");
-		
-		new PlayCenter(driver).makingFriendMap("brucewills@yopmail.com", "#e2m321");
-		
-		
-	}
-	
-	@Test(priority = 31)
-	public void locationMapTest() throws MalformedURLException, InterruptedException{
-		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
-		
-		System.out.println("Executing : Location Map Test");
-		
-		new PlayCenter(driver).locationMap("brucewills@yopmail.com", "#e2m321");
+		new Notes(driver).addNote("brucewills@yopmail.com", "#e2m321","Verify Me Before Session Ends");
 		
 		
 	}

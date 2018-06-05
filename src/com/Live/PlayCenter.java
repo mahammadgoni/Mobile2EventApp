@@ -1,14 +1,9 @@
 package com.Live;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.internal.TouchAction;
-import org.openqa.selenium.interactions.touch.TouchActions;
-
 import com.BaseSetup.BaseSetUp;
-
-import io.appium.java_client.android.AndroidKeyCode;
+import com.Utils.AndroidSetUp;
 
 
 
@@ -115,8 +110,10 @@ public class PlayCenter extends BaseSetUp{
 		
 		System.out.println("Scrolling till Play Center");
 		
+		AndroidSetUp setUp = new AndroidSetUp();
 		
-					
+		setUp.scrollDown();
+							
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking on Play Center");
