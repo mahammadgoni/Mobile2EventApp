@@ -106,6 +106,27 @@ public class AndroidSetUp {
 
 	}
 	
+	public void scrollDown(){
+		
+		System.out.println("Scrolling Down");
+		
+		try {
+			
+		    
+			
+			driver.pressKeyCode(AndroidKeyCode.ACTION_DOWN);
+			
+			driver.pressKeyCode(AndroidKeyCode.KEYCODE_PAGE_UP);
+			
+			driver.pressKeyCode(AndroidKeyCode.KEYCODE_PAGE_DOWN);
+			
+		} catch (Exception e) {
+			
+		}
+		
+
+	}
+	
 	
 	protected void swipeRightToLeft(){
 		

@@ -32,7 +32,7 @@ public class Schedule extends BaseSetUp{
 	
 	By timeTab = By.xpath("//*[@text='Time']");
 	
-	By session1st = By.xpath("//*[@bounds='[72,796][682,869]']");
+	By session1st = By.xpath("//*[@bounds='[0,702][1080,914]']");
 	
 	By bookmark = By.xpath("//*[@content-desc='Bookmark']");
 	
