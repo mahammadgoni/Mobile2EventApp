@@ -14,6 +14,7 @@ import com.Live.EventQA;
 import com.Live.LeaderBoard;
 import com.Live.OneToOneMessage;
 import com.Live.PhotoWall;
+import com.Live.PlayCenter;
 import com.Live.SocialWall;
 import com.Live.VideoWall;
 import com.LoginPage.LoginPage;
@@ -344,15 +345,51 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
+//	
+//	@Test(priority = 28)
+//	public void eventQATest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Event QA Test");
+//		
+//		new EventQA(driver).eventQA("brucewills@yopmail.com", "#e2m321", "Is this an Automation Session?");
+//		
+//		
+//	}
 	
-	@Test(priority = 28)
-	public void eventQATest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 29)
+	public void quizMapTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Event QA Test");
+		System.out.println("Executing : Quiz Map Test");
 		
-		new EventQA(driver).eventQA("brucewills@yopmail.com", "#e2m321", "Is this an Automation Session?");
+		new PlayCenter(driver).quizMap("brucewills@yopmail.com", "#e2m321");
+		
+		
+	}
+	
+	@Test(priority = 30)
+	public void makingFriendMapTest() throws MalformedURLException, InterruptedException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Making Friend Map Test");
+		
+		new PlayCenter(driver).makingFriendMap("brucewills@yopmail.com", "#e2m321");
+		
+		
+	}
+	
+	@Test(priority = 31)
+	public void locationMapTest() throws MalformedURLException, InterruptedException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Location Map Test");
+		
+		new PlayCenter(driver).locationMap("brucewills@yopmail.com", "#e2m321");
 		
 		
 	}
