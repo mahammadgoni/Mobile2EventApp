@@ -19,6 +19,8 @@ import com.Live.SocialWall;
 import com.Live.VideoWall;
 import com.LoginPage.LoginPage;
 import com.Me.Bookmarks;
+import com.Me.Logout;
+import com.Me.MyProfile;
 import com.Me.Notes;
 import com.Utils.AndroidSetUp;
 
@@ -407,15 +409,39 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
+//	
+//	@Test(priority = 33)
+//	public void addNoteTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Bookmarks Check Test");
+//		
+//		new Notes(driver).addNote("brucewills@yopmail.com", "#e2m321","Verify Me Before Session Ends");
+//		
+//		
+//	}
+//	
+//	@Test(priority = 34)
+//	public void updateMyProfileTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Update My Profile Details Test");
+//		
+//		new MyProfile(driver).editMyProfile("brucewills@yopmail.com", "#e2m321", "Devops", "E2M Crop", "2176008217", "I am an Admin User and i have all rights of Admin.");
+//		
+//		
+//	}
 	
-	@Test(priority = 33)
-	public void addNoteTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 35)
+	public void logoutTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Bookmarks Check Test");
+		System.out.println("Executing : Logout Test");
 		
-		new Notes(driver).addNote("brucewills@yopmail.com", "#e2m321","Verify Me Before Session Ends");
+		new Logout(driver).logoutCheck("brucewills@yopmail.com", "#e2m321");
 		
 		
 	}

@@ -15,8 +15,6 @@ public class MyProfile extends BaseSetUp{
 	
 	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
-	
 	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
 	
 	By menu = By.id("ws.e2m.main:id/btn_home");
@@ -26,6 +24,8 @@ public class MyProfile extends BaseSetUp{
 	By clickOnMe = By.xpath("//*[@content-desc='Me']");
 	
 	By clickOnMyProfile = By.xpath("//*[@content-desc='My Profile']");
+	
+	By myCompanyName = By.id("ws.e2m.main:id/tv_attende_company");
 	
 	By editMyProfile = By.xpath("//*[@content-desc='Edit profile']");
 	
@@ -43,6 +43,12 @@ public class MyProfile extends BaseSetUp{
 	
 	By phoneNo = By.id("ws.e2m.main:id/et_myprofile_phone");
 	
+	By countryCode = By.id("ws.e2m.main:id/tv_countryCode");
+	
+	By searchCountry = By.id("ws.e2m.main:id/img_search");
+	
+	By selectCountry = By.id("ws.e2m.main:id/tv_countryName");
+	
 	By description = By.id("ws.e2m.main:id/tv_myprofile_description_header");
 	
 	By addDescription = By.xpath("//*[@bounds='[0,384][1080,984]']");
@@ -50,6 +56,8 @@ public class MyProfile extends BaseSetUp{
 	By doneBtn = By.id("ws.e2m.main:id/tv_rightButton");
 	
 	By selectTag = By.id("ws.e2m.main:id/Checkbox_selectCategory");
+	
+	By saveButton = By.xpath("//*[@content-desc='Save']");
 	
 	
 	
@@ -126,9 +134,153 @@ public class MyProfile extends BaseSetUp{
 		
 	}
 	
-	public MyProfile editMyProfile(String userName,String password) throws InterruptedException{
+	public MyProfile editMyProfile(String userName,String password,String Desig,String Comp,String Phone,String Description) throws InterruptedException{
 		
 		commonActivity(userName, password);
+		
+		Thread.sleep(2000);
+		
+		waitForClickabilityOf(myCompanyName);
+		
+		String CompanyName = driver.findElement(myCompanyName).getText();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Edit My Profile");
+
+		waitForClickabilityOf(editMyProfile);
+
+		driver.findElement(editMyProfile).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering new Designation");
+
+		waitForClickabilityOf(designation);
+
+		driver.findElement(designation).clear();
+		
+		driver.findElement(designation).sendKeys(Desig);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering new Company Name");
+
+		waitForClickabilityOf(company);
+
+		driver.findElement(company).clear();
+		
+		driver.findElement(company).sendKeys(Comp);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Country Code");
+
+		waitForClickabilityOf(countryCode);
+
+		driver.findElement(countryCode).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Search Country Code");
+
+		waitForClickabilityOf(searchCountry);
+
+		driver.findElement(searchCountry).click();
+		
+		driver.findElement(searchCountry).sendKeys("United States");
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Selecting the Country");
+
+		waitForClickabilityOf(selectCountry);
+
+		driver.findElement(selectCountry).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering new Phone No");
+
+		waitForClickabilityOf(phoneNo);
+
+		driver.findElement(phoneNo).clear();
+		
+		driver.findElement(phoneNo).sendKeys(Phone);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Description");
+
+		waitForClickabilityOf(description);
+
+		driver.findElement(description).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering new Description for My Profile");
+
+		waitForClickabilityOf(addDescription);
+
+		driver.findElement(addDescription).clear();
+		
+		driver.findElement(addDescription).sendKeys(Description);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Done Button to Save Description");
+
+		waitForClickabilityOf(doneBtn);
+
+		driver.findElement(doneBtn).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Tag Tab");
+
+		waitForClickabilityOf(tagTab);
+
+		driver.findElement(tagTab).click();
+		
+		try {
+			
+			Thread.sleep(2000);
+			
+			System.out.println("Selecting the Tag ");
+
+			waitForClickabilityOf(selectTag);
+
+			driver.findElement(selectTag).click();
+			
+		} catch (Exception e) {
+			
+		}
+				
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking On Save Button to Update Profile Details");
+
+		waitForClickabilityOf(saveButton);
+
+		driver.findElement(saveButton).click();
+		
+		Thread.sleep(2000);
+		
+		waitForClickabilityOf(myCompanyName);
+		
+		String NewCompanyName = driver.findElement(myCompanyName).getText();
+		
+		Thread.sleep(2000);
+		
+		if (NewCompanyName.equals(CompanyName)) {
+			
+			System.out.println("Failed to Update My Profile Details");
+			
+		} else {
+			
+			System.out.println("Successfully Updated My Profile Details");
+
+		}
 		
 		
 		
