@@ -9,6 +9,7 @@ import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
+import com.Etc.Resources;
 import com.Live.Attendees;
 import com.Live.EventQA;
 import com.Live.LeaderBoard;
@@ -433,15 +434,27 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
+//	
+//	@Test(priority = 35)
+//	public void logoutTest() throws MalformedURLException, InterruptedException{
+//		
+//		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+//		
+//		System.out.println("Executing : Logout Test");
+//		
+//		new Logout(driver).logoutCheck("brucewills@yopmail.com", "#e2m321");
+//		
+//		
+//	}
 	
-	@Test(priority = 35)
-	public void logoutTest() throws MalformedURLException, InterruptedException{
+	@Test(priority = 36)
+	public void resourcesDataTest() throws MalformedURLException, InterruptedException{
 		
 		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
 		
-		System.out.println("Executing : Logout Test");
+		System.out.println("Executing : Resources Data Test");
 		
-		new Logout(driver).logoutCheck("brucewills@yopmail.com", "#e2m321");
+		new Resources(driver).resources("brucewills@yopmail.com", "#e2m321", "Please Add Resource PDF before test");
 		
 		
 	}
