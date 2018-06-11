@@ -114,7 +114,7 @@ public class Resources extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on My Profile");
+		System.out.println("Clicking on Resources");
 
 		waitForClickabilityOf(clickOnResources);
 
