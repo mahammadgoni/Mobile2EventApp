@@ -9,6 +9,7 @@ import com.Agenda.Schedule;
 import com.Agenda.Speakers;
 import com.Agenda.Sponsors;
 import com.Agenda.Survey;
+import com.Etc.LocationAndTiming;
 import com.Etc.Resources;
 import com.Live.Attendees;
 import com.Live.EventQA;
@@ -446,7 +447,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		
 //		
 //	}
-	
+//	
 	@Test(priority = 36)
 	public void resourcesDataTest() throws MalformedURLException, InterruptedException{
 		
@@ -454,7 +455,19 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Resources Data Test");
 		
-		new Resources(driver).resources("brucewills@yopmail.com", "#e2m321", "Please Add Resource PDF before test");
+		new Resources(driver).resources("brucewills@yopmail.com", "#e2m321", "Please Add Resource PDF If Not there");
+		
+		
+	}
+		
+	@Test(priority = 37)
+	public void locationAndTimingTest() throws MalformedURLException, InterruptedException{
+		
+		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		
+		System.out.println("Executing : Location and Timing Test");
+		
+		new LocationAndTiming(driver).locationAndTiming("brucewills@yopmail.com", "#e2m321");
 		
 		
 	}
