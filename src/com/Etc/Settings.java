@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 import com.BaseSetup.BaseSetUp;
 
-public class LocationAndTiming extends BaseSetUp{
+public class Settings extends BaseSetUp{
+	
+	
 	
 	By emailId = By.id("ws.e2m.main:id/et_email");
 	
@@ -21,26 +23,25 @@ public class LocationAndTiming extends BaseSetUp{
 	
 	By progressBar = By.id("ws.e2m.main:id/progress_small");
 	
-//	Clicking On Location and Timing Elements
+//	Clicking On Settings Elements
 	
 	By clickOnEtc = By.xpath("//*[@content-desc='Etc.']");
 	
-	By clickOnLocation = By.xpath("//*[@content-desc='Location & Timing']");
+	By clickOnSettings = By.xpath("//*[@content-desc='Settings']");
 	
-	By popUpBtn = By.xpath("//*[@content-desc='Popup button up']");
+	By aboutApp = By.xpath("//*[@text='About App']");
 	
-	By locationList = By.id("ws.e2m.main:id/lv_venu_list");
+	By aboutTitle = By.id("ws.e2m.main:id/txt_topHeading");
 	
-	By clickOn1stLocation = By.xpath("//*[@bounds='[27,920][1053,993]']");
-	
-	By venueTitle = By.id("ws.e2m.main:id/tv_venu_title");
+	By refreshData = By.xpath("//*[@text='Refresh Data']");
 	
 	
 
-	public LocationAndTiming(WebDriver driver) {
+	public Settings(WebDriver driver) {
 		super(driver);
 		
 	}
+	
 	
 //	Common Login Method
 	
@@ -100,56 +101,82 @@ public class LocationAndTiming extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Location and Timing");
+		System.out.println("Clicking on Settings");
 
-		waitForClickabilityOf(clickOnLocation);
+		waitForClickabilityOf(clickOnSettings);
 
-		driver.findElement(clickOnLocation).click();
+		driver.findElement(clickOnSettings).click();
 		
 	}
-
-//	Location and Timing Method
 	
-	public LocationAndTiming locationAndTiming(String userName,String password) throws InterruptedException{
+	public Settings refreshData(String userName,String password) throws InterruptedException{
 		
 		commonActivity(userName, password);
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Pop Up to see the Vanue List");
+		System.out.println("Clicking on Refresh Data ");
 
-		waitForClickabilityOf(popUpBtn);
+		waitForClickabilityOf(refreshData);
 
-		driver.findElement(popUpBtn).click();
+		driver.findElement(refreshData).click();
 		
 		Thread.sleep(2000);
 		
-		String Location = driver.findElement(clickOn1stLocation).getText();
+		waitForClickabilityOf(refreshData);
 		
-		driver.findElement(clickOn1stLocation).click();
-		
-		Thread.sleep(2000);
-		
-		String Location1 = driver.findElement(venueTitle).getText();
+		boolean Info = driver.findElement(refreshData).isDisplayed();
 		
 //		Verifying the Details
 		
-		if (Location.equals(Location1)) {
+		if (Info==false) {
 			
-			System.out.println("Successfully Verified the Loaction details");
+			System.out.println("Successfully Refreshed the Data");
 			
 		} else {
 			
-			System.out.println("Failed to verify the Location Details");
+			System.out.println("Failed to Refresh the Data");
 
 		}
-
-
 		
 		
-		return new LocationAndTiming(driver);
+		
+		
+		return new Settings(driver);
 	}
+	
+	public Settings aboutApp(String userName,String password) throws InterruptedException{
+		
+		commonActivity(userName, password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on About App");
 
+		waitForClickabilityOf(aboutApp);
 
+		driver.findElement(aboutApp).click();
+		
+		Thread.sleep(2000);
+		
+		String Title = driver.findElement(aboutTitle).getText();
+		
+		Thread.sleep(2000);
+		
+//		Verifying the Details
+		
+		if (Title.equals("About")) {
+			
+			System.out.println("Successfully Verified About App details");
+			
+		} else {
+			
+			System.out.println("Failed to verify the About App Details");
+
+		}
+		
+		
+		return new Settings(driver);
+	}
 
 }

@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 import com.BaseSetup.BaseSetUp;
 
-public class LocationAndTiming extends BaseSetUp{
+public class Home extends BaseSetUp{
+	
 	
 	By emailId = By.id("ws.e2m.main:id/et_email");
 	
@@ -21,23 +22,17 @@ public class LocationAndTiming extends BaseSetUp{
 	
 	By progressBar = By.id("ws.e2m.main:id/progress_small");
 	
-//	Clicking On Location and Timing Elements
+//	Clicking On Home Elements
 	
 	By clickOnEtc = By.xpath("//*[@content-desc='Etc.']");
 	
-	By clickOnLocation = By.xpath("//*[@content-desc='Location & Timing']");
+	By clickOnHome = By.xpath("//*[@content-desc='Home']");
 	
-	By popUpBtn = By.xpath("//*[@content-desc='Popup button up']");
-	
-	By locationList = By.id("ws.e2m.main:id/lv_venu_list");
-	
-	By clickOn1stLocation = By.xpath("//*[@bounds='[27,920][1053,993]']");
-	
-	By venueTitle = By.id("ws.e2m.main:id/tv_venu_title");
+	By homeTitle = By.id("ws.e2m.main:id/txt_topHeading");
 	
 	
 
-	public LocationAndTiming(WebDriver driver) {
+	public Home(WebDriver driver) {
 		super(driver);
 		
 	}
@@ -81,7 +76,7 @@ public class LocationAndTiming extends BaseSetUp{
 		waitForClickabilityOf(proceedBtn2);
 
 		driver.findElement(proceedBtn2).click();
-		
+				
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking on Menu Option ");
@@ -100,56 +95,36 @@ public class LocationAndTiming extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Location and Timing");
+		System.out.println("Clicking on Home");
 
-		waitForClickabilityOf(clickOnLocation);
+		waitForClickabilityOf(clickOnHome);
 
-		driver.findElement(clickOnLocation).click();
+		driver.findElement(clickOnHome).click();
 		
 	}
-
-//	Location and Timing Method
 	
-	public LocationAndTiming locationAndTiming(String userName,String password) throws InterruptedException{
+	public Home home(String userName,String password) throws InterruptedException{
 		
 		commonActivity(userName, password);
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Pop Up to see the Vanue List");
-
-		waitForClickabilityOf(popUpBtn);
-
-		driver.findElement(popUpBtn).click();
-		
-		Thread.sleep(2000);
-		
-		String Location = driver.findElement(clickOn1stLocation).getText();
-		
-		driver.findElement(clickOn1stLocation).click();
-		
-		Thread.sleep(2000);
-		
-		String Location1 = driver.findElement(venueTitle).getText();
-		
+		String homeScreen = driver.findElement(homeTitle).getText();
+				
 //		Verifying the Details
 		
-		if (Location.equals(Location1)) {
+		if (homeScreen.equals("Home")) {
 			
-			System.out.println("Successfully Verified the Loaction details");
+			System.out.println("Successfully Verified the Home Option");
 			
 		} else {
 			
-			System.out.println("Failed to verify the Location Details");
+			System.out.println("Failed to verify the Home Option");
 
 		}
-
-
 		
 		
-		return new LocationAndTiming(driver);
+		return new Home(driver);
 	}
-
-
 
 }
