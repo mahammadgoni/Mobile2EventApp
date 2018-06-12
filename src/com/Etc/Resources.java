@@ -20,7 +20,9 @@ public class Resources extends BaseSetUp{
 	
 	By menu = By.id("ws.e2m.main:id/btn_home");
 	
-//	Clicking On My Profile Elements
+	By progressBar = By.id("ws.e2m.main:id/progress_small");
+	
+//	Clicking On Resources Elements
 	
 	By clickOnEtc = By.xpath("//*[@content-desc='Etc.']");
 	
@@ -95,7 +97,7 @@ public class Resources extends BaseSetUp{
 		waitForClickabilityOf(proceedBtn2);
 
 		driver.findElement(proceedBtn2).click();
-		
+				
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking on Menu Option ");
