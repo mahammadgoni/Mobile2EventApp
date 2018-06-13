@@ -3,6 +3,7 @@ package com.TestCases;
 import java.io.IOException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.Agenda.Exhibitors;
 import com.Agenda.Schedule;
@@ -29,6 +30,11 @@ import com.Me.Logout;
 import com.Me.MyProfile;
 import com.Me.Notes;
 import com.Utils.AndroidSetUp;
+import com.Utils.GetScreenShot;
+
+//This Listener is for taking screen shot
+
+@Listeners({ GetScreenShot.class })
 
 public class E2MAppTestCases extends AndroidSetUp{
 
