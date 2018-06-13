@@ -5,18 +5,17 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
-import org.testng.ITestNGListener;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
 import com.TestCases.E2MAppTestCases;
 
-public class GetScreenShot implements ITestNGListener{
+public class GetScreenShot implements ITestListener{
 	
 //	 This method will execute before starting of Test suite.
 	public void onStart(ITestContext tr) {
