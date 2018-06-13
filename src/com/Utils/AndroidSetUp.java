@@ -3,27 +3,35 @@ package com.Utils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidKeyCode;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import java.net.MalformedURLException;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AndroidSetUp {
+public class AndroidSetUp extends ReadAndWriteTestData{
 	@SuppressWarnings("rawtypes")
 	protected static AndroidDriver driver;
-
-	String appPackagename = "ws.e2m.main";
-
-	String activityName = "ws.e2m.main.screens.SplashScreen";
 	
-//	String apkPath = "/Users/goni/Documents/workspace/WebSpiders/Event2MobileApp/APP's/e2m_V5.0_UAT.apk";
-	
-	String apkPath = "/Users/goni/Documents/workspace/WebSpiders/Event2MobileApp/APP's/e2m_Generic_V4.6_Branch_LIVE.apk";
+    String home = System.getProperty("user.dir");
 
 
 	@SuppressWarnings("rawtypes")
-	protected void prepareAndStartAppium(String DeviceName, String UDID, String PlatformVersion)throws MalformedURLException {
-		// protected void prepareAndStartAppium() throws MalformedURLException {
+	protected void prepareAndStartAppium()throws IOException {
+		
+		String DeviceName = getCellData(1, 0);
+		
+		String UDID = getCellData(1, 1);
+		
+		String PlatformVersion =  getCellData(1, 2);
 
+		String apkPath =  getCellData(1, 3);
+		
+		String appPackageName =  getCellData(1, 4);
+		
+		String activityName =  getCellData(1, 5);
+
+//		Property Settings are done here
+		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		System.out.println("===============================================");
@@ -36,19 +44,13 @@ public class AndroidSetUp {
 
 		capabilities.setCapability("platformVersion", PlatformVersion);
 
-		// capabilities.setCapability("platformVersion", "4.4.4");
-
-		// capabilities.setCapability("deviceName", "emulator-5554");
-		//
-		// capabilities.setCapability("udid", "emulator-5554");
-		//
 		capabilities.setCapability("deviceName", DeviceName);
 
 		capabilities.setCapability("udid", UDID);
 
-		capabilities.setCapability("app", apkPath);
+		capabilities.setCapability("app", home+apkPath);
 
-		capabilities.setCapability("appPackage", appPackagename);
+		capabilities.setCapability("appPackage", appPackageName);
 
 		capabilities.setCapability("appActivity", activityName);
 		
@@ -60,21 +62,25 @@ public class AndroidSetUp {
 
 	}
 	
-	protected void installApp(){
+	protected void installApp() throws IOException{
 		
 		System.out.println("Installing the Application ");
 		
-		driver.installApp(apkPath);
+		String apkPath =  getCellData(1, 3);
+		
+		driver.installApp(home+apkPath);
 		
 		System.out.println("Successfully Installed the Application ");
 		
 	}
 	
-	protected void uninstallApp(){
+	protected void uninstallApp() throws IOException{
+		
+		String appPackageName =  getCellData(1, 4);
 		
 		System.out.println("Uninstalling the Application the Application");
 		
-		driver.removeApp(appPackagename);
+		driver.removeApp(appPackageName);
 		
 		System.out.println("Successfully Uninstalled the Application");
 		
@@ -93,14 +99,17 @@ public class AndroidSetUp {
 		driver.pressKeyCode(AndroidKeyCode.HOME);
 	}
 
-	protected void openTheApp() {
-	
-		
+	protected void openTheApp() throws IOException {
+			
 		System.out.println("Opening the App Again to Check the Changed Password");
+		
+		String appPackageName =  getCellData(1, 4);
+		
+		String activityName =  getCellData(1, 5);
 
 		DesiredCapabilities caps = new DesiredCapabilities();
 
-		caps.setCapability("appPackage", appPackagename);
+		caps.setCapability("appPackage", appPackageName);
 
 		caps.setCapability("appActivity", activityName);
 
