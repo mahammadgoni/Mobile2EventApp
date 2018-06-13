@@ -1,6 +1,6 @@
 package com.TestCases;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -31,17 +31,12 @@ import com.Me.Notes;
 import com.Utils.AndroidSetUp;
 
 public class E2MAppTestCases extends AndroidSetUp{
-	
-	String DeviceName = "Google Nexus 5";
-	
-	String UDID = "192.168.57.101:5555";
-	
-	String PlatformVersion = "6.0";
+
 	
 	@BeforeClass
-	public void setUp() throws MalformedURLException{
+	public void setUp() throws IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		prepareAndStartAppium();
 		
 	}
 	
@@ -53,7 +48,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 	}
 	
 	@Test(priority = 1)
-	public void uninstallAppTest(){
+	public void uninstallAppTest() throws IOException{
 		
 		System.out.println("Executing : Uninstall Application Test");
 		
@@ -62,7 +57,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 	}
 	
 	@Test(priority = 2)
-	public void installAppTest() throws MalformedURLException{
+	public void installAppTest() throws IOException{
 		
 		System.out.println("Executing : Install Application Test");
 				
@@ -71,477 +66,641 @@ public class E2MAppTestCases extends AndroidSetUp{
 	}
 	
 	@Test(priority = 3)
-	public void loginToAccountTest() throws MalformedURLException, InterruptedException{
+	public void loginToAccountTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Login to your Account Test");
 		
-		new LoginPage(driver).accountLogin("brucewills@yopmail.com", "#e2m321");
+		new LoginPage(driver).accountLogin(userName, password);
 		
 	}
 	
 	@Test(priority = 4)
-	public void forgotPasswordTest() throws MalformedURLException, InterruptedException{
+	public void forgotPasswordTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Forgot Password Test");
 		
-		new LoginPage(driver).forgotPassword("brucewills@yopmail.com", "#e2m321");
+		new LoginPage(driver).forgotPassword(userName, password);
 		
 	}
 	
 	@Test(priority = 5)
-	public void changePasswordTest() throws MalformedURLException, InterruptedException{
+	public void changePasswordTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Chanege Password Test");
 		
-		new LoginPage(driver).changePassword("brucewills@yopmail.com", "#e2m321","123456");
+		new LoginPage(driver).changePassword(userName, password,"123456");
 		
 	}
 	
 	
 	@Test(priority = 6)
-	public void revertPasswordTest() throws MalformedURLException, InterruptedException{
+	public void revertPasswordTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Revert Back to Default Password Test");
 		
-		new LoginPage(driver).changePassword("brucewills@yopmail.com", "123456","#e2m321");
+		new LoginPage(driver).changePassword(userName, "123456",password);
 		
 	}
 	
 	@Test(priority = 7)
-	public void homePageVerifyTest() throws MalformedURLException, InterruptedException{
+	public void homePageVerifyTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Home Page Verify Test");
 		
-		new LoginPage(driver).homePageVerify("brucewills@yopmail.com","#e2m321");
+		new LoginPage(driver).homePageVerify(userName, password);
 		
 	}
 	
 	@Test(priority = 8)
-	public void scheduleTimeTest() throws MalformedURLException, InterruptedException{
+	public void scheduleTimeTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Schedule Time Test");
 		
-		new Schedule(driver).time("brucewills@yopmail.com","#e2m321", "This is Automation Testing Notes", "Are you adding questions through Automation?");
+		new Schedule(driver).time(userName, password, "This is Automation Testing Notes", "Are you adding questions through Automation?");
 		
 	}
 	
 	@Test(priority = 9)
-	public void scheduleTracksLiveTest() throws MalformedURLException, InterruptedException{
+	public void scheduleTracksLiveTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Schedule Tracks Live Test");
 		
-		new Schedule(driver).tracks("brucewills@yopmail.com","#e2m321", "This is Automation Testing Live Track Session Note", "Is this Live tracks Session?","Live");
+		new Schedule(driver).tracks(userName, password, "This is Automation Testing Live Track Session Note", "Is this Live tracks Session?","Live");
 		
 	}
 	
 	@Test(priority = 10)
-	public void scheduleTracksPlatformsTest() throws MalformedURLException, InterruptedException{
+	public void scheduleTracksPlatformsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Schedule Tracks Platforms Test");
 		
-		new Schedule(driver).tracks("brucewills@yopmail.com","#e2m321", "This is Automation Testing Platforms Track Session Note", "Is this Platforms tracks Session?","Platforms");
+		new Schedule(driver).tracks(userName, password, "This is Automation Testing Platforms Track Session Note", "Is this Platforms tracks Session?","Platforms");
 		
 	}
 	
 	@Test(priority = 11)
-	public void scheduleMyAgendaTabTest() throws MalformedURLException, InterruptedException{
+	public void scheduleMyAgendaTabTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Schedule My Agenda Tab Test");
 		
-		new Schedule(driver).myAgenda("brucewills@yopmail.com","#e2m321", "This is Automation Testing My Agenda Session Note", "Is this My Agenda Session?");
+		new Schedule(driver).myAgenda(userName, password, "This is Automation Testing My Agenda Session Note", "Is this My Agenda Session?");
 		
 	}
 	
 	@Test(priority = 12)
-	public void speakerDetailsTest() throws MalformedURLException, InterruptedException{
+	public void speakerDetailsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Speaker Details Test");
 		
-		new Speakers(driver).speakerDetails("brucewills@yopmail.com","#e2m321");
+		new Speakers(driver).speakerDetails(userName, password);
 		
 	}
 	
 	@Test(priority = 13)
-	public void exhibitorNameTest() throws MalformedURLException, InterruptedException{
+	public void exhibitorNameTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Exhibitor Name Test");
 		
-		new Exhibitors(driver).exhibitorsName("brucewills@yopmail.com","#e2m321");
+		new Exhibitors(driver).exhibitorsName(userName, password);
 		
 	}
 	
 	@Test(priority = 14)
-	public void exhibitorTypeTest() throws MalformedURLException, InterruptedException{
+	public void exhibitorTypeTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Exhibitor Type Test");
 		
-		new Exhibitors(driver).exhibitorType("brucewills@yopmail.com","#e2m321");
+		new Exhibitors(driver).exhibitorType(userName, password);
 		
 	}
 	
 	@Test(priority = 15)
-	public void sponsorsNameTest() throws MalformedURLException, InterruptedException{
+	public void sponsorsNameTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Sponsors Name Test");
 		
-		new Sponsors(driver).sponsorsName("brucewills@yopmail.com","#e2m321");
+		new Sponsors(driver).sponsorsName(userName, password);
 		
 	}
 	
 	@Test(priority = 16)
-	public void sponsorsTypeTest() throws MalformedURLException, InterruptedException{
+	public void sponsorsTypeTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Sponsors Type Test");
 		
-		new Sponsors(driver).sponsorsType("brucewills@yopmail.com","#e2m321");
+		new Sponsors(driver).sponsorsType(userName, password);
 		
 	}
 	
 	@Test(priority = 17)
-	public void dropdownPollsTest() throws MalformedURLException, InterruptedException{
+	public void dropdownPollsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Drop Down Polls/Survey Test");
 		
-		new Survey(driver).surveyDropdownPoll("brucewills@yopmail.com","#e2m321");
+		new Survey(driver).surveyDropdownPoll(userName, password);
 		
 	}
 	
 	
 	@Test(priority = 18)
-	public void freeTextPollsTest() throws MalformedURLException, InterruptedException{
+	public void freeTextPollsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Free Text Polls/Survey Test");
 		
-		new Survey(driver).surveyFreeTextPoll("brucewills@yopmail.com","#e2m321");
+		new Survey(driver).surveyFreeTextPoll(userName, password);
 		
 	}
 	
 	
 	@Test(priority = 19)
-	public void multiplePollsTest() throws MalformedURLException, InterruptedException{
+	public void multiplePollsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Multiple Polls/Survey Test");
 		
-		new Survey(driver).surveyMultiplePoll("brucewills@yopmail.com","#e2m321");
+		new Survey(driver).surveyMultiplePoll(userName, password);
 		
 	}
 	
 	
 	@Test(priority = 20)
-	public void singlePollsTest() throws MalformedURLException, InterruptedException{
+	public void singlePollsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Single Polls/Survey Test");
 		
-		new Survey(driver).surveySinglePoll("brucewills@yopmail.com","#e2m321");
+		new Survey(driver).surveySinglePoll(userName, password);
 		
 	}
 	
 	@Test(priority = 21)
-	public void attendeeDetailsTest() throws MalformedURLException, InterruptedException{
+	public void attendeeDetailsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Attendee Details Test");
 		
-		new Attendees(driver).attendeeDetails("brucewills@yopmail.com","#e2m321", "Two");
+		new Attendees(driver).attendeeDetails(userName, password, "Two");
 		
 	}
 	
 		
 	@Test(priority = 22)
-	public void socialWallTest() throws MalformedURLException{
+	public void socialWallTest() throws IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Social Wall Posting Test");
 		
-		new SocialWall(driver).socialWall("brucewills@yopmail.com", "#e2m321", "This is Automation Testing Comment");
+		new SocialWall(driver).socialWall(userName, password, "This is Automation Testing Comment");
 		
 		
 	}
 	
 	@Test(priority = 23)
-	public void oneToOneMsgTest() throws MalformedURLException, InterruptedException{
+	public void oneToOneMsgTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : One To One Message Test");
 		
-		new OneToOneMessage(driver).oneToOneMsg("brucewills@yopmail.com", "#e2m321", "This Auto First O2O Message");
+		new OneToOneMessage(driver).oneToOneMsg(userName, password, "This Auto First O2O Message");
 		
 		
 	}
 
 	@Test(priority = 24)
-	public void photoWallTest() throws MalformedURLException, InterruptedException{
+	public void photoWallTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Photo Wall Test");
 		
-		new PhotoWall(driver).photoUpload("brucewills@yopmail.com", "#e2m321", 10, "Automation Image Caption");
+		new PhotoWall(driver).photoUpload(userName, password, 10, "Automation Image Caption");
 		
 		
 	}
 
 	@Test(priority = 25)
-	public void videoRecordUploadTest() throws MalformedURLException, InterruptedException{
+	public void videoRecordUploadTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Recoding Video Uploading Test");
 		
-		new VideoWall(driver).videoUpload("brucewills@yopmail.com", "#e2m321", true, "Recorded Video");
+		new VideoWall(driver).videoUpload(userName, password, true, "Recorded Video");
 		
 		
 	}
 	
 	@Test(priority = 26)
-	public void videoExistUploadTest() throws MalformedURLException, InterruptedException{
+	public void videoExistUploadTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Existing Video Uploading Test");
 		
-		new VideoWall(driver).videoUpload("brucewills@yopmail.com", "#e2m321", false, "Existing Video");
+		new VideoWall(driver).videoUpload(userName, password, false, "Existing Video");
 		
 		
 	}
 	
 	@Test(priority = 27)
-	public void leaderBoardDetailsTest() throws MalformedURLException, InterruptedException{
+	public void leaderBoardDetailsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Leader Board Details Test");
 		
-		new LeaderBoard(driver).leaderBoardDetails("brucewills@yopmail.com", "#e2m321");
+		new LeaderBoard(driver).leaderBoardDetails(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 28)
-	public void eventQATest() throws MalformedURLException, InterruptedException{
+	public void eventQATest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Event QA Test");
 		
-		new EventQA(driver).eventQA("brucewills@yopmail.com", "#e2m321", "Is this an Automation Session?");
+		new EventQA(driver).eventQA(userName, password, "Is this an Automation Session?");
 		
 		
 	}
 	
 	@Test(priority = 29)
-	public void quizMapTest() throws MalformedURLException, InterruptedException{
+	public void quizMapTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Quiz Map Test");
 		
-		new PlayCenter(driver).quizMap("brucewills@yopmail.com", "#e2m321");
+		new PlayCenter(driver).quizMap(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 30)
-	public void makingFriendMapTest() throws MalformedURLException, InterruptedException{
+	public void makingFriendMapTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Making Friend Map Test");
 		
-		new PlayCenter(driver).makingFriendMap("brucewills@yopmail.com", "#e2m321");
+		new PlayCenter(driver).makingFriendMap(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 31)
-	public void locationMapTest() throws MalformedURLException, InterruptedException{
+	public void locationMapTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Location Map Test");
 		
-		new PlayCenter(driver).locationMap("brucewills@yopmail.com", "#e2m321");
+		new PlayCenter(driver).locationMap(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 32)
-	public void bookmarksTest() throws MalformedURLException, InterruptedException{
+	public void bookmarksTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Bookmarks Check Test");
 		
-		new Bookmarks(driver).bookmarked("brucewills@yopmail.com", "#e2m321");
+		new Bookmarks(driver).bookmarked(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 33)
-	public void addNoteTest() throws MalformedURLException, InterruptedException{
+	public void addNoteTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Bookmarks Check Test");
 		
-		new Notes(driver).addNote("brucewills@yopmail.com", "#e2m321","Verify Me Before Session Ends");
+		new Notes(driver).addNote(userName, password,"Verify Me Before Session Ends");
 		
 		
 	}
 	
 	@Test(priority = 34)
-	public void updateMyProfileTest() throws MalformedURLException, InterruptedException{
+	public void updateMyProfileTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Update My Profile Details Test");
 		
-		new MyProfile(driver).editMyProfile("brucewills@yopmail.com", "#e2m321", "Devops", "E2M Crop", "2176008217", "I am an Admin User and i have all rights of Admin.");
+		new MyProfile(driver).editMyProfile(userName, password, "Devops", "E2M Crop", "2176008217", "I am an Admin User and i have all rights of Admin.");
 		
 		
 	}
 	
 	@Test(priority = 35)
-	public void logoutTest() throws MalformedURLException, InterruptedException{
+	public void logoutTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Logout Test");
 		
-		new Logout(driver).logoutCheck("brucewills@yopmail.com", "#e2m321");
+		new Logout(driver).logoutCheck(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 36)
-	public void resourcesDataTest() throws MalformedURLException, InterruptedException{
+	public void resourcesDataTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Resources Data Test");
 		
-		new Resources(driver).resources("brucewills@yopmail.com", "#e2m321", "Please Add Resource PDF If Not there");
+		new Resources(driver).resources(userName, password, "Please Add Resource PDF If Not there");
 		
 		
 	}
 		
 	@Test(priority = 37)
-	public void locationAndTimingTest() throws MalformedURLException, InterruptedException{
+	public void locationAndTimingTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Location and Timing Test");
 		
-		new LocationAndTiming(driver).locationAndTiming("brucewills@yopmail.com", "#e2m321");
+		new LocationAndTiming(driver).locationAndTiming(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 38)
-	public void useFulInfoTest() throws MalformedURLException, InterruptedException{
+	public void useFulInfoTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Useful Info Test");
 		
-		new UsefullInfo(driver).viweUsefulInfo("brucewills@yopmail.com", "#e2m321");
+		new UsefullInfo(driver).viweUsefulInfo(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 39)
-	public void floorMapDetailsTest() throws MalformedURLException, InterruptedException{
+	public void floorMapDetailsTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : View Floor Map Details Test");
 		
-		new FloorMap(driver).viewFloorMap("brucewills@yopmail.com", "#e2m321");
+		new FloorMap(driver).viewFloorMap(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 40)
-	public void wayFinderTest() throws MalformedURLException, InterruptedException{
+	public void wayFinderTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Wayfinder Test");
 		
-		new FloorMap(driver).wayFinder("brucewills@yopmail.com", "#e2m321");
+		new FloorMap(driver).wayFinder(userName, password);
 		
 		
 	}
 	
 	@Test(priority = 41)
-	public void refreshDataTest() throws MalformedURLException, InterruptedException{
+	public void refreshDataTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Refresh Data Test");
 		
-		new Settings(driver).refreshData("brucewills@yopmail.com", "#e2m321");
+		new Settings(driver).refreshData(userName, password);
 		
 	}
 	
 	@Test(priority = 42)
-	public void aboutAppTest() throws MalformedURLException, InterruptedException{
+	public void aboutAppTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : About App Test");
 		
-		new Settings(driver).aboutApp("brucewills@yopmail.com", "#e2m321");
+		new Settings(driver).aboutApp(userName, password);
 		
 	}
 	
 	@Test(priority = 43)
-	public void homeTest() throws MalformedURLException, InterruptedException{
+	public void homeTest() throws InterruptedException, IOException{
 		
-		prepareAndStartAppium(DeviceName, UDID, PlatformVersion);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
 		
 		System.out.println("Executing : Home Test");
 		
-		new Home(driver).home("brucewills@yopmail.com", "#e2m321");
+		new Home(driver).home(userName, password);
 		
 	}
 	
