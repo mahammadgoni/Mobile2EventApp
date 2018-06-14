@@ -1,11 +1,7 @@
 package com.LoginPage;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
 import com.BaseSetup.BaseSetUp;
 
 public class LoginPage extends BaseSetUp{
@@ -367,15 +363,9 @@ public class LoginPage extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-//		Storing No Of Existing Options
+		waitForClickabilityOf(menu);
 		
-		waitForClickabilityOf(noOfOptions);
-		
-		List<WebElement> element = driver.findElements(noOfOptions);
-		
-		int NoOfExOptions = element.size();
-		
-		if (NoOfExOptions==10) {
+		if (driver.findElement(menu).isDisplayed()==true) {
 			
 			System.out.println("Home Page is Loaded and Verified Properly");
 			

@@ -40,7 +40,7 @@ public class SocialWall extends BaseSetUp{
 	
 //	This Login Method will perform Login actions,Just need to call it in Method
 	
-	public void Login(String userName,String password){
+	public void Login(String userName,String password) throws InterruptedException{
 		
 		System.out.println("Clicking on Your Email ");
 
@@ -52,11 +52,15 @@ public class SocialWall extends BaseSetUp{
 
 		driver.findElement(emailId).sendKeys(userName);
 		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Proceed Button ");
 
 		waitForClickabilityOf(proceedBtn1);
 
 		driver.findElement(proceedBtn1).click();
+		
+		Thread.sleep(2000);
 
 		System.out.println("Entering the Pin  :" + password);
 
@@ -66,6 +70,8 @@ public class SocialWall extends BaseSetUp{
 
 		driver.findElement(pass).sendKeys(password);
 		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Proceed Button ");
 
 		waitForClickabilityOf(proceedBtn2);
@@ -74,9 +80,11 @@ public class SocialWall extends BaseSetUp{
 		
 	}
 	
-	public SocialWall socialWall(String userName,String password,String Comment){
+	public SocialWall socialWall(String userName,String password,String Comment) throws InterruptedException{
 		
 		Login(userName, password);
+		
+		Thread.sleep(2000);
 		
 		System.out.println("Clicking on Menu to Expand Options");
 		
@@ -84,11 +92,15 @@ public class SocialWall extends BaseSetUp{
 
 		driver.findElement(menu).click();
 		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Live Option");
 		
 		waitForClickabilityOf(liveOption);
 
 		driver.findElement(liveOption).click();
+		
+		Thread.sleep(2000);
 		
 		System.out.println("Clicking on Social Wall");
 		
@@ -96,11 +108,15 @@ public class SocialWall extends BaseSetUp{
 
 		driver.findElement(socialWall).click();
 		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking on Add Topic Button to add Status");
 		
 		waitForClickabilityOf(addTopic);
 
 		driver.findElement(addTopic).click();
+		
+		Thread.sleep(2000);
 		
 		System.out.println("Entering Status Comment"+Comment);
 		
@@ -108,18 +124,20 @@ public class SocialWall extends BaseSetUp{
 
 		driver.findElement(addComment).sendKeys(Comment);
 		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking On Submit to Add  Status Comment");
 		
 		waitForClickabilityOf(submitComment);
 
 		driver.findElement(submitComment).click();
 		
+		Thread.sleep(2000);
+		
 		String PostedComment = driver.findElement(postedComment).getText();
 		
-//		System.out.println("Comment is : "+Comment);
-//		
-//		System.out.println("Posted Comment is : "+PostedComment);
-		
+		Thread.sleep(2000);
+			
 		if (Comment.equals(PostedComment)) {
 			
 			System.out.println("Successfully Posted the Comment");
