@@ -123,8 +123,6 @@ public class Settings extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		waitForClickabilityOf(refreshData);
-		
 		boolean Info = driver.findElement(refreshData).isDisplayed();
 		
 //		Verifying the Details

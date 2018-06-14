@@ -356,13 +356,13 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Attendee Details Test");
 		
-		new Attendees(driver).attendeeDetails(userName, password, "Two");
+		new Attendees(driver).attendeeDetails(userName, password, "One");
 		
 	}
 	
 		
 	@Test(priority = 22)
-	public void socialWallTest() throws IOException{
+	public void socialWallTest() throws IOException, InterruptedException{
 		
 		String userName =  getCellData(1, 6);
 		

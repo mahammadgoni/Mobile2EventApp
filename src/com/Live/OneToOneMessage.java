@@ -147,6 +147,8 @@ public class OneToOneMessage extends BaseSetUp{
 
 		driver.findElement(sendBtn).click();
 		
+		Thread.sleep(2000);
+		
 //      Verifying Condition 
 		
 		String SentMsg = driver.findElement(By.xpath("//*[@text='"+Message+"']")).getText();

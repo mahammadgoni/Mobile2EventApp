@@ -140,12 +140,18 @@ public class LeaderBoard extends BaseSetUp{
 		driver.findElement(groupTab).click();
 		
 		Thread.sleep(2000);
-
-		waitForClickabilityOf(groupPoints);
 		
-		String GroupPoints = driver.findElement(groupPoints).getText();
-		
-		System.out.println("Groups Point : "+GroupPoints);
+		try {
+			
+			waitForClickabilityOf(groupPoints);
+			
+			String GroupPoints = driver.findElement(groupPoints).getText();
+			
+			System.out.println("Groups Point : "+GroupPoints);
+			
+		} catch (Exception e) {
+			
+		}
 		
 		Thread.sleep(2000);
 		
