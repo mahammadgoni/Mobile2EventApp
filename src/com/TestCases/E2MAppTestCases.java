@@ -395,7 +395,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : One To One Message Test");
 		
-		new OneToOneMessage(driver).oneToOneMsg(userName, password, "This Auto First O2O Message");
+		new OneToOneMessage(driver).oneToOneMsg(userName, password, "This Auto First O2O Message 1");
 		
 		
 	}
@@ -411,7 +411,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Photo Wall Test");
 		
-		new PhotoWall(driver).photoUpload(userName, password, 10, "Automation Image Caption");
+		new PhotoWall(driver).photoUpload(userName, password, 10, "Automation Image Caption 1");
 		
 		
 	}
@@ -475,7 +475,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Event QA Test");
 		
-		new EventQA(driver).eventQA(userName, password, "Is this an Automation Session?");
+		new EventQA(driver).eventQA(userName, password, "Is this an Automation 1 Session?");
 		
 		
 	}
@@ -555,7 +555,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Bookmarks Check Test");
 		
-		new Notes(driver).addNote(userName, password,"Verify Me Before Session Ends");
+		new Notes(driver).addNote(userName, password,"This test is for Android Estimation");
 		
 		
 	}

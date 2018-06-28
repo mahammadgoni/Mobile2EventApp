@@ -28,7 +28,7 @@ public class Schedule extends BaseSetUp{
 	
 	By clickOnAgenda = By.xpath("//android.widget.ImageView[@content-desc='Agenda']");
 	
-	By clickOnSchedule = By.xpath("//*[@bounds='[396,49][885,106]']");
+	By clickOnSchedule = By.xpath("//*[@text='Schedule']");
 	
 	By timeTab = By.xpath("//*[@text='Time']");
 	
@@ -127,7 +127,7 @@ public class Schedule extends BaseSetUp{
 
 		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 

@@ -69,11 +69,15 @@ public class AndroidSetUp extends ReadAndWriteTestData{
 
 		capabilities.setCapability("appActivity", activityName);
 		
+//		capabilities.setCapability("automationName", "uiautomator2");
+//		
+//		capabilities.setCapability("newCommandTimeout", "160");
+		
 //		capabilities.setCapability("noResetValue", "false");
 
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
-		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
 
 	}
 	
