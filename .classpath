@@ -8,18 +8,22 @@
 	<classpathentry kind="lib" path="Jars/selenium-java-3.6.0/client-combined-3.6.0-sources.jar"/>
 	<classpathentry kind="lib" path="Jars/selenium-java-3.6.0/client-combined-3.6.0.jar"/>
 	<classpathentry kind="lib" path="Jars/selenium-server-standalone-3.8.1.jar"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Event2Mobile/Jars/poi-bin-3.17-20170915/poi-3.17/xmlbeans-2.6.0.jar"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Event2Mobile/Jars/poi-bin-3.17-20170915/poi-3.17/poi-examples-3.17.jar"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Event2Mobile/Jars/poi-bin-3.17-20170915/poi-3.17/poi-excelant-3.17.jar"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Event2Mobile/Jars/poi-bin-3.17-20170915/poi-3.17/poi-ooxml-schemas-3.17.jar"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Event2Mobile/Jars/poi-bin-3.17-20170915/poi-3.17/poi-3.17.jar"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Event2Mobile/Jars/poi-bin-3.17-20170915/poi-3.17/poi-ooxml-3.17.jar"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Event2Mobile/Jars/poi-bin-3.17-20170915/poi-3.17/poi-scratchpad-3.17.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/ooxml-lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/lib/commons-collections4-4.1.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/lib/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/lib/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/javax.mail-api-1.5.5.jar"/>
+	<classpathentry kind="lib" path="Jars/poi-3.17/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="Jars/poi-3.17/poi-examples-3.17.jar"/>
+	<classpathentry kind="lib" path="Jars/poi-3.17/poi-excelant-3.17.jar"/>
+	<classpathentry kind="lib" path="Jars/poi-3.17/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="Jars/poi-3.17/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="Jars/poi-3.17/poi-scratchpad-3.17.jar"/>
+	<classpathentry kind="lib" path="Jars/ATUTestRecorder_2.1.jar"/>
+	<classpathentry kind="lib" path="Jars/cglib-3.2.5.jar"/>
+	<classpathentry kind="lib" path="Jars/cglib-nodep-3.2.5.jar"/>
+	<classpathentry kind="lib" path="Jars/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="Jars/java-client-6.0.0-BETA1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

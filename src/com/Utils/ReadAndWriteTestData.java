@@ -61,7 +61,11 @@ public class ReadAndWriteTestData {
 		
 		String BrowserName = getCellData(1, 0);
 		
-		System.out.println(BrowserName);
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		System.out.println(BrowserName+userName+password);
 		
 	}
 

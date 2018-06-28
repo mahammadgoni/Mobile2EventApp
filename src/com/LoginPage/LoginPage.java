@@ -97,7 +97,7 @@ public class LoginPage extends BaseSetUp{
 
 		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		waitForClickabilityOf(menu);
 				
@@ -232,7 +232,7 @@ public class LoginPage extends BaseSetUp{
 
 		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Menu Option ");
 		
@@ -353,7 +353,7 @@ public class LoginPage extends BaseSetUp{
 
 		driver.findElement(pass).sendKeys(password);
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		System.out.println("Clicking on Proceed Button ");
 
@@ -361,7 +361,7 @@ public class LoginPage extends BaseSetUp{
 
 		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		waitForClickabilityOf(menu);
 		
