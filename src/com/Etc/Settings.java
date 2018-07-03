@@ -9,19 +9,19 @@ public class Settings extends BaseSetUp{
 	
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
-	By progressBar = By.id("ws.e2m.main:id/progress_small");
+	By progressBar = By.id("progress_small");
 	
 //	Clicking On Settings Elements
 	
@@ -31,7 +31,7 @@ public class Settings extends BaseSetUp{
 	
 	By aboutApp = By.xpath("//*[@text='About App']");
 	
-	By aboutTitle = By.id("ws.e2m.main:id/txt_topHeading");
+	By aboutTitle = By.id("txt_topHeading");
 	
 	By refreshData = By.xpath("//*[@text='Refresh Data']");
 	

@@ -8,19 +8,19 @@ import com.BaseSetup.BaseSetUp;
 public class UsefullInfo extends BaseSetUp{
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
-	By progressBar = By.id("ws.e2m.main:id/progress_small");
+	By progressBar = By.id("progress_small");
 	
 //	Clicking On Useful Info Elements
 	
@@ -28,7 +28,7 @@ public class UsefullInfo extends BaseSetUp{
 	
 	By clickOnUsefulInfo = By.xpath("//*[@content-desc='Useful Info']");
 	
-	By infoTitle = By.id("ws.e2m.main:id/tv_name_value");
+	By infoTitle = By.id("tv_name_value");
 	
 
 	

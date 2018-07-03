@@ -8,19 +8,19 @@ import com.BaseSetup.BaseSetUp;
 public class FloorMap extends BaseSetUp{
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
-	By progressBar = By.id("ws.e2m.main:id/progress_small");
+	By progressBar = By.id("progress_small");
 	
 //	Clicking On Floor Map Elements
 	
@@ -28,27 +28,27 @@ public class FloorMap extends BaseSetUp{
 	
 	By clickOnFloorMap = By.xpath("//*[@content-desc='Floor Map']");
 	
-	By floorMap1stTitle = By.id("ws.e2m.main:id/tv_maps_value");
+	By floorMap1stTitle = By.id("tv_maps_value");
 	
-	By chooseFloorMap = By.id("ws.e2m.main:id/tv_floormap");
+	By chooseFloorMap = By.id("tv_floormap");
 	
 	By selectFloorMap = By.id("android:id/text1");
 	
-	By clickOnOK = By.id("ws.e2m.main:id/btn_csdialog_cancel");
+	By clickOnOK = By.id("btn_csdialog_cancel");
 	
 	By wayfinder = By.xpath("//*[@content-desc='Wayfinder']");
 	
-	By source = By.id("ws.e2m.main:id/tv_source");
+	By source = By.id("tv_source");
 	
 	By selectSource = By.id("android:id/text1");
 	
-	By destination = By.id("ws.e2m.main:id/tv_destination");
+	By destination = By.id("tv_destination");
 	
 	By selectDestination = By.id("android:id/text1");
 	
-	By getDirection = By.id("ws.e2m.main:id/tv_getdirection");
+	By getDirection = By.id("tv_getdirection");
 	
-	By routePopUp = By.id("ws.e2m.main:id/iv_routeUP");
+	By routePopUp = By.id("iv_routeUP");
 	
 	By detailRoute = By.xpath("//*[@text='Detail Route']");
 	

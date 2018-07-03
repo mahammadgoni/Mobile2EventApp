@@ -9,19 +9,19 @@ public class Attendees extends BaseSetUp{
 	
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Attendees Elements
 	
@@ -29,13 +29,13 @@ public class Attendees extends BaseSetUp{
 	
 	By clickOnAttendees = By.xpath("//*[@text='Attendees']");
 	
-	By attendeeNameOne = By.xpath("//*[@bounds='[204,606][412,671]']");
+	By attendeeNameOne = By.xpath("//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
 	
-	By attendeeNameTwo = By.xpath("//*[@bounds='[204,902][469,967]']");
+	By attendeeNameTwo = By.xpath("//android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
 	
-	By attendeeNameThree = By.xpath("//*[@bounds='[204,1198][449,1263]']");
+	By attendeeNameThree = By.xpath("//android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
 	
-	By attendeeName = By.id("ws.e2m.main:id/tv_attende_name");
+	By attendeeName = By.id("tv_attende_name");
 	
 	By addToContact = By.xpath("//*[@content-desc='Add to contact']");
 	

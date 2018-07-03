@@ -8,19 +8,19 @@ import com.BaseSetup.BaseSetUp;
 public class Speakers extends BaseSetUp{
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Schedule Elements
 	
@@ -28,13 +28,13 @@ public class Speakers extends BaseSetUp{
 	
 	By clickOnSpeakers = By.xpath("//*[@text='Speakers']");
 	
-	By speakerOne = By.xpath("//*[@bounds='[219,462][505,535]']");
+	By speakerOne = By.xpath("//android.view.View[2]/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout");
 	
-	By speakerTwo = By.xpath("//*[@bounds='[219,690][447,763]']");
+	By speakerTwo = By.xpath("//android.view.View[2]/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout");
 	
-	By speakerThree = By.xpath("//*[@bounds='[219,918][542,991]']");
+	By speakerThree = By.xpath("//android.view.View[2]/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.RelativeLayout");
 	
-	By speakerName = By.id("ws.e2m.main:id/tv_speaker_name");
+	By speakerName = By.id("tv_speaker_name");
 	
 
 	public Speakers(WebDriver driver) {
@@ -143,12 +143,7 @@ public class Speakers extends BaseSetUp{
 			System.out.println("Failed to Verify Speaker Details");
 
 		}
-		
-		
-		
-		
-		
-		
+				
 		
 		
 		return new Speakers(driver);

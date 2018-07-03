@@ -7,19 +7,19 @@ import com.BaseSetup.BaseSetUp;
 
 public class LocationAndTiming extends BaseSetUp{
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
-	By progressBar = By.id("ws.e2m.main:id/progress_small");
+	By progressBar = By.id("progress_small");
 	
 //	Clicking On Location and Timing Elements
 	
@@ -29,11 +29,11 @@ public class LocationAndTiming extends BaseSetUp{
 	
 	By popUpBtn = By.xpath("//*[@content-desc='Popup button up']");
 	
-	By locationList = By.id("ws.e2m.main:id/lv_venu_list");
+	By locationList = By.id("lv_venu_list");
 	
-	By clickOn1stLocation = By.xpath("//*[@bounds='[27,920][1053,993]']");
+	By clickOn1stLocation = By.xpath("//android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout[1]");
 	
-	By venueTitle = By.id("ws.e2m.main:id/tv_venu_title");
+	By venueTitle = By.id("tv_venu_title");
 	
 	
 

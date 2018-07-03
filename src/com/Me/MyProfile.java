@@ -7,17 +7,17 @@ import com.BaseSetup.BaseSetUp;
 
 public class MyProfile extends BaseSetUp{
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Clicking On My Profile Elements
 	
@@ -25,7 +25,7 @@ public class MyProfile extends BaseSetUp{
 	
 	By clickOnMyProfile = By.xpath("//*[@content-desc='My Profile']");
 	
-	By myCompanyName = By.id("ws.e2m.main:id/tv_attende_company");
+	By myCompanyName = By.id("tv_attende_company");
 	
 	By editMyProfile = By.xpath("//*[@content-desc='Edit profile']");
 	
@@ -33,29 +33,29 @@ public class MyProfile extends BaseSetUp{
 	
 	By genTab = By.xpath("//*[@text='General']");
 		
-	By firstName = By.id("ws.e2m.main:id/et_myprofile_firstName");
+	By firstName = By.id("et_myprofile_firstName");
 	
-	By lastName = By.id("ws.e2m.main:id/et_myprofile_lastName");
+	By lastName = By.id("et_myprofile_lastName");
 	
-	By designation = By.id("ws.e2m.main:id/et_myprofile_desig");
+	By designation = By.id("et_myprofile_desig");
 	
-	By company = By.id("ws.e2m.main:id/et_myprofile_company");
+	By company = By.id("et_myprofile_company");
 	
-	By phoneNo = By.id("ws.e2m.main:id/et_myprofile_phone");
+	By phoneNo = By.id("et_myprofile_phone");
 	
-	By countryCode = By.id("ws.e2m.main:id/tv_countryCode");
+	By countryCode = By.id("tv_countryCode");
 	
-	By searchCountry = By.id("ws.e2m.main:id/img_search");
+	By searchCountry = By.id("img_search");
 	
-	By selectCountry = By.id("ws.e2m.main:id/tv_countryName");
+	By selectCountry = By.id("tv_countryName");
 	
-	By description = By.id("ws.e2m.main:id/tv_myprofile_description_header");
+	By description = By.id("tv_myprofile_description_header");
 	
 	By addDescription = By.xpath("//*[@bounds='[0,384][1080,984]']");
 	
-	By doneBtn = By.id("ws.e2m.main:id/tv_rightButton");
+	By doneBtn = By.id("tv_rightButton");
 	
-	By selectTag = By.id("ws.e2m.main:id/Checkbox_selectCategory");
+	By selectTag = By.id("Checkbox_selectCategory");
 	
 	By saveButton = By.xpath("//*[@content-desc='Save']");
 	

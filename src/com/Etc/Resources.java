@@ -8,19 +8,19 @@ import com.BaseSetup.BaseSetUp;
 public class Resources extends BaseSetUp{
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
-	By progressBar = By.id("ws.e2m.main:id/progress_small");
+	By progressBar = By.id("progress_small");
 	
 //	Clicking On Resources Elements
 	
@@ -28,9 +28,9 @@ public class Resources extends BaseSetUp{
 	
 	By clickOnResources = By.xpath("//*[@content-desc='Resources']");
 	
-	By file1 = By.xpath("//*[@bounds='[159,371][1080,420]']");
+	By file1 = By.id("tv_badge1");
 	
-	By clickOnPdf = By.id("ws.e2m.main:id/tv_caption");
+	By clickOnPdf = By.id("tv_caption");
 	
 	By addNote = By.xpath("//*[@content-desc='Add note']");
 	
@@ -38,17 +38,17 @@ public class Resources extends BaseSetUp{
 	
 	By noteListBtn = By.xpath("//*[@content-desc='Note list']");
 	
-	By noteDetails = By.id("ws.e2m.main:id/et_addnote_detail");
+	By noteDetails = By.id("et_addnote_detail");
 	
 	By saveBtn = By.xpath("//*[@content-desc='Save']");
 	
 	By shareBtn = By.xpath("//*[@content-desc='Share']");
 	
-	By sharePresentation = By.id("ws.e2m.main:id/upld_view");
+	By sharePresentation = By.id("upld_view");
 	
-	By shareNotes = By.id("ws.e2m.main:id/upld_take");
+	By shareNotes = By.id("upld_take");
 	
-	By sharePreAndNotes = By.id("ws.e2m.main:id/upld_lib");
+	By sharePreAndNotes = By.id("upld_lib");
 	
 	
 	
@@ -130,9 +130,9 @@ public class Resources extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		String File = driver.findElement(file1).getText();
+		boolean File = driver.findElement(file1).isDisplayed();
 		
-		if (File.equals("1 File")) {
+		if (File==true) {
 			
 			Thread.sleep(2000);
 			
