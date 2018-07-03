@@ -60,23 +60,23 @@ public class E2MAppTestCases extends AndroidSetUp{
 		sendMailReport();
 	}
 	
-	@Test(priority = 1)
-	public void uninstallAppTest() throws IOException{
-		
-		System.out.println("Executing : Uninstall Application Test");
-		
-		uninstallApp();	
-		
-	}
-	
-	@Test(priority = 2)
-	public void installAppTest() throws IOException{
-		
-		System.out.println("Executing : Install Application Test");
-				
-		installApp();
-		
-	}
+//	@Test(priority = 1)
+//	public void uninstallAppTest() throws IOException{
+//		
+//		System.out.println("Executing : Uninstall Application Test");
+//		
+//		uninstallApp();	
+//		
+//	}
+//	
+//	@Test(priority = 2)
+//	public void installAppTest() throws IOException{
+//		
+//		System.out.println("Executing : Install Application Test");
+//				
+//		installApp();
+//		
+//	}
 	
 	@Test(priority = 3)
 	public void loginToAccountTest() throws InterruptedException, IOException{
@@ -92,53 +92,53 @@ public class E2MAppTestCases extends AndroidSetUp{
 		new LoginPage(driver).accountLogin(userName, password);
 		
 	}
-	
-	@Test(priority = 4)
-	public void forgotPasswordTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Forgot Password Test");
-		
-		new LoginPage(driver).forgotPassword(userName, password);
-		
-	}
-	
-	@Test(priority = 5)
-	public void changePasswordTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Chanege Password Test");
-		
-		new LoginPage(driver).changePassword(userName, password,"123456");
-		
-	}
-	
-	
-	@Test(priority = 6)
-	public void revertPasswordTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Revert Back to Default Password Test");
-		
-		new LoginPage(driver).changePassword(userName, "123456",password);
-		
-	}
-	
+//	
+//	@Test(priority = 4)
+//	public void forgotPasswordTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Forgot Password Test");
+//		
+//		new LoginPage(driver).forgotPassword(userName, password);
+//		
+//	}
+//	
+//	@Test(priority = 5)
+//	public void changePasswordTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Chanege Password Test");
+//		
+//		new LoginPage(driver).changePassword(userName, password,"123456");
+//		
+//	}
+//	
+//	
+//	@Test(priority = 6)
+//	public void revertPasswordTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Revert Back to Default Password Test");
+//		
+//		new LoginPage(driver).changePassword(userName, "123456",password);
+//		
+//	}
+//	
 	@Test(priority = 7)
 	public void homePageVerifyTest() throws InterruptedException, IOException{
 		
@@ -395,7 +395,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : One To One Message Test");
 		
-		new OneToOneMessage(driver).oneToOneMsg(userName, password, "This Auto First O2O Message 1");
+		new OneToOneMessage(driver).oneToOneMsg(userName, password, "Second Message Test");
 		
 		
 	}
@@ -475,7 +475,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Event QA Test");
 		
-		new EventQA(driver).eventQA(userName, password, "Is this an Automation 1 Session?");
+		new EventQA(driver).eventQA(userName, password, "Is this is Brazil?");
 		
 		
 	}
@@ -555,7 +555,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Bookmarks Check Test");
 		
-		new Notes(driver).addNote(userName, password,"This test is for Android Estimation");
+		new Notes(driver).addNote(userName, password,"This test is for Automation Estimation");
 		
 		
 	}
@@ -571,7 +571,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Update My Profile Details Test");
 		
-		new MyProfile(driver).editMyProfile(userName, password, "Devops", "E2M Crop", "2176008217", "I am an Admin User and i have all rights of Admin.");
+		new MyProfile(driver).editMyProfile(userName, password, "Devops", "E2M Crop", "2176008217", "I have all rights of Admin.");
 		
 		
 	}

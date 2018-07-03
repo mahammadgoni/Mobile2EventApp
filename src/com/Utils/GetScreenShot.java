@@ -61,16 +61,16 @@ public class GetScreenShot implements ITestListener{
 //		 TestCases.driver).getScreenshotAs(OutputType.FILE);
 
 		DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
-		Date now = new Date();
-		String folder = dateFormat.format(now);
+//		Date now = new Date();
+//		String folder = dateFormat.format(now);
 		
 //		 If status = fail then set folder name "screenshots/Failures"
 		if (status.equalsIgnoreCase("fail")) {
-			destDir = folder+"screenshots/Failures";
+			destDir = "screenshots/Failures";
 		}
 //		 If status = pass then set folder name "screenshots/Success"
 		else if (status.equalsIgnoreCase("pass")) {
-			destDir = folder+"screenshots/Success";
+			destDir = "screenshots/Success";
 		}
 
 //		 To create folder to store screenshots

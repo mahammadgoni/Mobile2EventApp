@@ -8,19 +8,19 @@ import com.BaseSetup.BaseSetUp;
 public class PhotoWall extends BaseSetUp{
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Photo Wall Elements
 	
@@ -30,25 +30,25 @@ public class PhotoWall extends BaseSetUp{
 	
 	By clickOnCamera = By.xpath("//*[@content-desc='Upload Photo']");
 	
-	By takePhoto = By.id("ws.e2m.main:id/upld_take");
+	By takePhoto = By.id("upld_take");
 	
-	By existingPhoto = By.id("ws.e2m.main:id/upld_lib");
+	By existingPhoto = By.id("upld_lib");
 	
 	By dismiss = By.id("android:id/button1");
 	
-	By select1stPhoto = By.xpath("//*[@bounds='[6,156][361,516]']");
+	By select1stPhoto = By.xpath("//android.widget.GridView/android.widget.FrameLayout[1]/android.widget.ImageView");
 	
 	By cropPhoto = By.xpath("//*[@content-desc='Crop']");
 	
 	By rotatePhoto = By.xpath("//*[@content-desc='Rotate']");
 	
-	By resetPhoto = By.id("ws.e2m.main:id/tv_reset");
+	By resetPhoto = By.id("tv_reset");
 	
-	By proceedBtn = By.id("ws.e2m.main:id/tv_rightButton");
+	By proceedBtn = By.id("tv_rightButton");
 	
-	By imageCaption = By.id("ws.e2m.main:id/et_image_caption");
+	By imageCaption = By.id("et_image_caption");
 	
-	By uploadBtn = By.id("ws.e2m.main:id/tv_rightButton");
+	By uploadBtn = By.id("tv_rightButton");
 	
 	By listView = By.xpath("//*[@content-desc='List view']");
 	
@@ -58,9 +58,9 @@ public class PhotoWall extends BaseSetUp{
 	
 	By commentOnImage = By.xpath("//*[@content-desc='Comment']");
 	
-	By addComments = By.id("ws.e2m.main:id/ed_add_comments");
+	By addComments = By.id("ed_add_comments");
 	
-	By postComment = By.id("ws.e2m.main:id/btn_send");
+	By postComment = By.id("btn_send");
 	
 	
 	

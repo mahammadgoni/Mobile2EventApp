@@ -8,19 +8,19 @@ public class OneToOneMessage extends BaseSetUp{
 	
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	One To One Message Elements
 	
@@ -30,11 +30,11 @@ public class OneToOneMessage extends BaseSetUp{
 	
 	By clickOnEditMsg = By.xpath("//*[@content-desc='Write a message']");
 	
-	By select1stAttendee = By.xpath("//*[@bounds='[198,462][1050,637]']");
+	By select1stAttendee = By.xpath("//android.widget.ListView/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]");
 	
 	By writeHere = By.xpath("//*[@text='Write here']");
 	
-	By sendBtn = By.id("ws.e2m.main:id/btn_send");
+	By sendBtn = By.id("btn_send");
 	
 	
 
@@ -123,11 +123,17 @@ public class OneToOneMessage extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Selecting Attendee to Send the Message");
+		try {
+			
+			System.out.println("Selecting Attendee to Send the Message");
 
-		waitForClickabilityOf(select1stAttendee);
+			waitForClickabilityOf(select1stAttendee);
 
-		driver.findElement(select1stAttendee).click();
+			driver.findElement(select1stAttendee).click();
+			
+		} catch (Exception e) {
+			
+		}
 		
 		Thread.sleep(2000);
 		

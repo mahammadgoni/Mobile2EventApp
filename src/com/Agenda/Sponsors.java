@@ -7,19 +7,19 @@ import com.BaseSetup.BaseSetUp;
 
 public class Sponsors extends BaseSetUp{
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Sponsors Elements
 	
@@ -31,11 +31,11 @@ public class Sponsors extends BaseSetUp{
 	
 	By clickOnSaveToContact = By.xpath("//*[@content-desc='Save to contacts']");
 		
-	By sponsorsName = By.xpath("//*[@bounds='[204,606][355,671]']");
+	By sponsorsName = By.xpath("//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
 	
-	By sponsorsTypeName = By.xpath("//*[@bounds='[204,606][400,671]']");
+	By sponsorsTypeName = By.xpath("//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[1]");
 		
-	By sponsorsOneName = By.xpath("//*[@bounds='[237,340][826,413]']");
+	By sponsorsOneName = By.id("tv_exhibitor_company");
 	
 	By clickOnBookmark = By.xpath("//*[@content-desc='Add bookmark']");
 	

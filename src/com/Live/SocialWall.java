@@ -8,29 +8,29 @@ import com.BaseSetup.BaseSetUp;
 public class SocialWall extends BaseSetUp{
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
 	By liveOption = By.xpath("//*[@content-desc='Live']");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 	By socialWall = By.xpath("//*[@content-desc='Social Wall']");
 	
-	By addTopic = By.id("ws.e2m.main:id/btn_right");
+	By addTopic = By.id("btn_right");
 	
 //	By addTopic = By.xpath("//android.widget.ImageView[@content-desc='Add topic']");
 	
-	By addComment = By.id("ws.e2m.main:id/et_comment");
+	By addComment = By.id("et_comment");
 	
-	By submitComment = By.id("ws.e2m.main:id/tv_rightButton");
+	By submitComment = By.id("tv_rightButton");
 	
-	By postedComment = By.xpath("//*[@resource-id='ws.e2m.main:id/tv_topic' and @instance='4']");
+	By postedComment = By.xpath("//*[@resource-id='tv_topic' and @instance='4']");
 	
 
 	public SocialWall(WebDriver driver) {
@@ -132,7 +132,9 @@ public class SocialWall extends BaseSetUp{
 
 		driver.findElement(submitComment).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+		
+		waitForClickabilityOf(postedComment);
 		
 		String PostedComment = driver.findElement(postedComment).getText();
 		

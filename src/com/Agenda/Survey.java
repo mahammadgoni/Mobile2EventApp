@@ -7,19 +7,19 @@ import com.BaseSetup.BaseSetUp;
 
 public class Survey extends BaseSetUp{
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Survey Elements
 	
@@ -31,7 +31,7 @@ public class Survey extends BaseSetUp{
 	
 	By dropdownPoll = By.xpath("//*[@text='Automation Dropdown Poll Testing']");
 	
-	By selectAnOption = By.id("ws.e2m.main:id/tv_option");
+	By selectAnOption = By.id("tv_option");
 	
 	By nextQuestion = By.xpath("//*[@text='Next Question']");
 	
@@ -43,13 +43,13 @@ public class Survey extends BaseSetUp{
 	
 	By okBtn = By.xpath("//*[@text='OK']");
 	
-	By previousBtn = By.id("ws.e2m.main:id/btn_prev_button");
+	By previousBtn = By.id("btn_prev_button");
 	
-	By btnSubmit = By.id("ws.e2m.main:id/btn_submit");
+	By btnSubmit = By.id("btn_submit");
 	
-	By thanksMsg = By.id("ws.e2m.main:id/tv_thanks");
+	By thanksMsg = By.id("tv_thanks");
 	
-	By morePolls = By.id("ws.e2m.main:id/btn_vw_more");
+	By morePolls = By.id("btn_vw_more");
 	
 //	Free Text Poll Elements
 	

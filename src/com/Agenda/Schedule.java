@@ -10,19 +10,19 @@ import io.appium.java_client.android.AndroidKeyCode;
 
 public class Schedule extends BaseSetUp{
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Schedule Elements
 	
@@ -32,7 +32,7 @@ public class Schedule extends BaseSetUp{
 	
 	By timeTab = By.xpath("//*[@text='Time']");
 	
-	By session1st = By.xpath("//*[@bounds='[0,702][1080,914]']");
+	By session1st = By.xpath("//android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout");
 	
 	By bookmark = By.xpath("//*[@content-desc='Bookmark']");
 	
@@ -40,27 +40,27 @@ public class Schedule extends BaseSetUp{
 	
 	By rate = By.xpath("//*[@text='Rate']");
 	
-	By cancleRate = By.id("ws.e2m.main:id/btn_home");
+	By cancleRate = By.id("btn_home");
 	
 	By takeNotes = By.xpath("//*[@text='Take Notes']");
 	
-	By addNote = By.id("ws.e2m.main:id/et_addnote_detail");
+	By addNote = By.id("et_addnote_detail");
 	
-	By addNotePlusBtn = By.id("ws.e2m.main:id/btn_right");
+	By addNotePlusBtn = By.id("btn_right");
 	
-	By saveNote = By.id("ws.e2m.main:id/btn_right");
+	By saveNote = By.id("btn_right");
 	
 	By askAQuestion = By.xpath("//*[@text='Ask A Question']");
 	
-	By addQuestion = By.id("ws.e2m.main:id/et_ask");
+	By addQuestion = By.id("et_ask");
 	
-	By saveQuestion = By.id("ws.e2m.main:id/tv_ask");
+	By saveQuestion = By.id("tv_ask");
 	
 	By vote = By.xpath("//*[@text='Vote']");
 	
 	By addToAgenda = By.xpath("//*[@text='Add To Agenda']");
 	
-	By speakersList = By.id("ws.e2m.main:id/speaker_list_view_title");
+	By speakersList = By.id("speaker_list_view_title");
 	
 	By tracksTab = By.xpath("//*[@text='Tracks']");
 	
@@ -68,17 +68,17 @@ public class Schedule extends BaseSetUp{
 	
 	By platforms = By.xpath("//*[@text='Platforms']");
 	
-	By select1stTrackSesn = By.xpath("//*[@bounds='[0,558][1080,792]']");
+	By select1stTrackSesn = By.xpath("//android.widget.ListView/android.widget.LinearLayout[1]");
 	
-	By select2ndTrackSesn = By.xpath("//*[@bounds='[0,795][1080,1029]']");
+	By select2ndTrackSesn = By.xpath("//android.widget.ListView/android.widget.LinearLayout[2]");
 	
 	By bookmark1st = By.xpath("//*[@content-desc='Remove bookmark']");
 		
 	By myAgendaTab = By.xpath("//*[@text='My Agenda']");
 	
-	By select1stAgendaSesn = By.xpath("//*[@bounds='[75,653][517,736]']");
+	By select1stAgendaSesn = By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout");
 	
-	By select2ndAgendaSesn = By.xpath("//*[@bounds='[75,1266][409,1349]']");
+	By select2ndAgendaSesn = By.xpath("//android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout");
 	
 	
 
@@ -561,7 +561,7 @@ public class Schedule extends BaseSetUp{
 					
 		Thread.sleep(2000);
 			
-		System.out.println("Clicking on Session from Tracks Tab");
+		System.out.println("Clicking on Session from My Agenda Tab");
 
 		waitForClickabilityOf(select1stAgendaSesn);
 

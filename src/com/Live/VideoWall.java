@@ -10,19 +10,19 @@ import com.BaseSetup.BaseSetUp;
 public class VideoWall extends BaseSetUp{
 	
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Video Wall Elements
 	
@@ -32,21 +32,21 @@ public class VideoWall extends BaseSetUp{
 	
 	By clickOnVideo = By.xpath("//*[@content-desc='Upload Video']");
 	
-	By proceedBtn = By.id("ws.e2m.main:id/btn_record_procced");
+	By proceedBtn = By.id("btn_record_procced");
 	
-	By takeVideo = By.id("ws.e2m.main:id/upld_vid_take");
+	By takeVideo = By.id("upld_vid_take");
 	
 	By clickOnRecord = By.xpath("//*[@content-desc='Record']");
 	
 	By clickOnSave = By.xpath("//*[@content-desc='Save']");
 	
-	By videoCaption = By.id("ws.e2m.main:id/edt_UV_caption");
+	By videoCaption = By.id("edt_UV_caption");
 	
-	By uploadBtn = By.id("ws.e2m.main:id/tv_rightButton");
+	By uploadBtn = By.id("tv_rightButton");
 	
-	By existingVideo = By.id("ws.e2m.main:id/upld_vid_lib");
+	By existingVideo = By.id("upld_vid_lib");
 	
-	By select1stVideo = By.xpath("//*[@bounds='[6,156][358,516]']");
+	By select1stVideo = By.xpath("//android.widget.RelativeLayout/android.widget.GridView/android.widget.FrameLayout[1]");
 	
 	By listView = By.xpath("//*[@content-desc='List view']");
 	

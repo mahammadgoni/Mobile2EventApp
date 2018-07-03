@@ -7,19 +7,19 @@ import com.BaseSetup.BaseSetUp;
 
 public class Notes extends BaseSetUp{
 	
-	By emailId = By.id("ws.e2m.main:id/et_email");
+	By emailId = By.id("et_email");
 	
-	By pass = By.id("ws.e2m.main:id/et_password");
+	By pass = By.id("et_password");
 	
-	By proceedBtn1 = By.id("ws.e2m.main:id/tv_proceed");
+	By proceedBtn1 = By.id("tv_proceed");
 	
-	By proceedBtn2 = By.id("ws.e2m.main:id/rl_proceed");
+	By proceedBtn2 = By.id("rl_proceed");
 	
-	By forgotPassBtn = By.id("ws.e2m.main:id/tv_forgot_pswd");
+	By forgotPassBtn = By.id("tv_forgot_pswd");
 	
-	By submitBtn = By.id("ws.e2m.main:id/tv_submit");
+	By submitBtn = By.id("tv_submit");
 	
-	By menu = By.id("ws.e2m.main:id/btn_home");
+	By menu = By.id("btn_home");
 	
 //	Clicking On Notes Elements
 	
@@ -27,11 +27,11 @@ public class Notes extends BaseSetUp{
 	
 	By clickOnNotes = By.xpath("//*[@content-desc='Notes']");
 		
-	By clickOn1stSession = By.xpath("//*[@bounds='[0,282][1080,440]']");
+	By clickOn1stSession = By.xpath("//android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout");
 	
 	By addNotesBtn = By.xpath("//*[@content-desc='Add note']");
 	
-	By addNoteDetails = By.id("ws.e2m.main:id/et_addnote_detail");
+	By addNoteDetails = By.id("et_addnote_detail");
 	
 	By saveNoteBtn = By.xpath("//*[@content-desc='Save note']");
 		
