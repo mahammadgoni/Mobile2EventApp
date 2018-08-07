@@ -282,6 +282,8 @@ public class Resources extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		waitForClickabilityOf(By.xpath("//*[@text='"+Note+"']"));
+		
 		String AddedNote = driver.findElement(By.xpath("//*[@text='"+Note+"']")).getText();
 		
 		if (AddedNote.equals(Note)) {

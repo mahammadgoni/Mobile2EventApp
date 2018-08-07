@@ -171,20 +171,26 @@ public class LeaderBoard extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		waitForClickabilityOf(activityNo1);
-		
-		String Activity1 = driver.findElement(activityNo1).getText();
-		
-		System.out.println("My Activity : "+Activity1);
-		
-		Thread.sleep(2000);
-		
-		waitForClickabilityOf(activityNo2);
-		
-		String Activity2 = driver.findElement(activityNo2).getText();
-		
-		System.out.println("My Activity  : "+Activity2);
-		
+		try {
+			
+			waitForClickabilityOf(activityNo1);
+			
+			String Activity1 = driver.findElement(activityNo1).getText();
+			
+			System.out.println("My Activity : "+Activity1);
+			
+			Thread.sleep(2000);
+			
+			waitForClickabilityOf(activityNo2);
+			
+			String Activity2 = driver.findElement(activityNo2).getText();
+			
+			System.out.println("My Activity  : "+Activity2);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+				
 		String Total = UserPoints+" Points";
 		
 //		Verify the Condition

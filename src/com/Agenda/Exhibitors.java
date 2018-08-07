@@ -152,16 +152,16 @@ public class Exhibitors extends BaseSetUp{
 		driver.findElement(clickOnSaveToContact).click();
 		
 		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Bookmark Exhibitor");
-
-		waitForClickabilityOf(clickOnBookmark);
-
-		driver.findElement(clickOnBookmark).click();
-		
-		Thread.sleep(2000);
-		
+				
 		try {
+			
+			System.out.println("Clicking on Bookmark Exhibitor");
+
+			waitForClickabilityOf(clickOnBookmark);
+
+			driver.findElement(clickOnBookmark).click();
+			
+			Thread.sleep(2000);
 			
 			System.out.println("Clicking on Exhibitor Website");
 
@@ -249,13 +249,19 @@ public class Exhibitors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Bookmark Exhibitor");
+		try {
+			
+			System.out.println("Clicking on Bookmark Exhibitor");
 
-		waitForClickabilityOf(clickOnBookmark);
+			waitForClickabilityOf(clickOnBookmark);
 
-		driver.findElement(clickOnBookmark).click();
-		
-//		Thread.sleep(2000);
+			driver.findElement(clickOnBookmark).click();
+			
+		} catch (Exception e) {
+			
+		}
+			
+		Thread.sleep(2000);
 			
 //		String ExbtrType = driver.findElement(exhibitorType).getText();	
 		

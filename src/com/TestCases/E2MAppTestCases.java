@@ -33,7 +33,7 @@ import com.Me.Notes;
 import com.Utils.AndroidSetUp;
 import com.Utils.GetScreenShot;
 
-//This Listener is for taking screen shot
+//This Listener is to taking screen shot
 
 @Listeners({ GetScreenShot.class })
 
@@ -57,26 +57,26 @@ public class E2MAppTestCases extends AndroidSetUp{
 	@AfterSuite
 	public void mailReport(){
 		
-		sendMailReport();
+//		sendMailReport();
 	}
 	
-//	@Test(priority = 1)
-//	public void uninstallAppTest() throws IOException{
-//		
-//		System.out.println("Executing : Uninstall Application Test");
-//		
-//		uninstallApp();	
-//		
-//	}
-//	
-//	@Test(priority = 2)
-//	public void installAppTest() throws IOException{
-//		
-//		System.out.println("Executing : Install Application Test");
-//				
-//		installApp();
-//		
-//	}
+	@Test(priority = 1)
+	public void uninstallAppTest() throws IOException{
+		
+		System.out.println("Executing : Uninstall Application Test");
+		
+		uninstallApp();	
+		
+	}
+	
+	@Test(priority = 2)
+	public void installAppTest() throws IOException{
+		
+		System.out.println("Executing : Install Application Test");
+				
+		installApp();
+		
+	}
 	
 	@Test(priority = 3)
 	public void loginToAccountTest() throws InterruptedException, IOException{
@@ -138,7 +138,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new LoginPage(driver).changePassword(userName, "123456",password);
 //		
 //	}
-//	
+	
 	@Test(priority = 7)
 	public void homePageVerifyTest() throws InterruptedException, IOException{
 		
@@ -165,7 +165,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Schedule Time Test");
 		
-		new Schedule(driver).time(userName, password, "This is Automation Testing Notes", "Are you adding questions through Automation?");
+		new Schedule(driver).time(userName, password, "This is Appium Testing Notes", "Are you adding questions through Automation?");
 		
 	}
 	
@@ -379,7 +379,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Social Wall Posting Test");
 		
-		new SocialWall(driver).socialWall(userName, password, "This is Automation Testing Comment");
+		new SocialWall(driver).socialWall(userName, password, "This is Jack Solly From Avatar");
 		
 		
 	}
@@ -395,7 +395,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : One To One Message Test");
 		
-		new OneToOneMessage(driver).oneToOneMsg(userName, password, "Second Message Test");
+		new OneToOneMessage(driver).oneToOneMsg(userName, password, "Bumbel Bee Reporting");
 		
 		
 	}
@@ -411,7 +411,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Photo Wall Test");
 		
-		new PhotoWall(driver).photoUpload(userName, password, 10, "Automation Image Caption 1");
+		new PhotoWall(driver).photoUpload(userName, password, 10, "Moto G Cap");
 		
 		
 	}
@@ -475,7 +475,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Event QA Test");
 		
-		new EventQA(driver).eventQA(userName, password, "Is this is Brazil?");
+		new EventQA(driver).eventQA(userName, password, "Is this is Uganda?");
 		
 		
 	}
@@ -553,9 +553,9 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		prepareAndStartAppium();
 		
-		System.out.println("Executing : Bookmarks Check Test");
+		System.out.println("Executing : Add Note Test");
 		
-		new Notes(driver).addNote(userName, password,"This test is for Automation Estimation");
+		new Notes(driver).addNote(userName, password,"This test is for 3rd Iteration ");
 		
 		
 	}
@@ -571,7 +571,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Update My Profile Details Test");
 		
-		new MyProfile(driver).editMyProfile(userName, password, "Devops", "E2M Crop", "2176008217", "I have all rights of Admin.");
+		new MyProfile(driver).editMyProfile(userName, password, "Devops", "Code Crop", "2176008217", "No Place for Coding");
 		
 		
 	}

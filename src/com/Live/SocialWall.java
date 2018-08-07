@@ -30,7 +30,7 @@ public class SocialWall extends BaseSetUp{
 	
 	By submitComment = By.id("tv_rightButton");
 	
-	By postedComment = By.xpath("//*[@resource-id='tv_topic' and @instance='4']");
+	By postedComment = By.xpath("//android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView");
 	
 
 	public SocialWall(WebDriver driver) {
