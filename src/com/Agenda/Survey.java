@@ -31,15 +31,15 @@ public class Survey extends BaseSetUp{
 	
 	By dropdownPoll = By.xpath("//*[@text='Automation Dropdown Poll Testing']");
 	
-	By selectAnOption = By.id("tv_option");
+	By selectAnOption = By.id("iv_nxt");
 	
 	By nextQuestion = By.xpath("//*[@text='Next Question']");
 	
-	By optionOne = By.xpath("//*[@bounds='[75,711][1005,855]']");
+	By optionOne = By.xpath("//android.widget.ListView/android.widget.TextView[1]");
 	
-	By optionTwo = By.xpath("//*[@bounds='[75,854][1005,998]']");
+	By optionTwo = By.xpath("//android.widget.ListView/android.widget.TextView[2]");
 	
-	By optionThree = By.xpath("//*[@bounds='[75,997][1005,1136]']");
+	By optionThree = By.xpath("//android.widget.ListView/android.widget.TextView[3]");
 	
 	By okBtn = By.xpath("//*[@text='OK']");
 	
@@ -55,15 +55,17 @@ public class Survey extends BaseSetUp{
 	
 	By freeTextPoll = By.xpath("//*[@text='Automation Free Text Poll Testing']");
 	
+	By enterFreeText = By.id("tv_option");
+	
 //	Multiple Poll Elements
 		
 	By multiplePoll = By.xpath("//*[@text='Automation Multiple Poll Testing']");
 	
-	By mulOptionOne = By.xpath("//*[@bounds='[75,528][1005,663]']");
+	By mulOptionOne = By.xpath("//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout");
 	
-	By mulOptionTwo = By.xpath("//*[@bounds='[75,693][1005,828]']");
+	By mulOptionTwo = By.xpath("//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout");
 	
-	By mulOptionThree = By.xpath("//*[@bounds='[75,858][1005,993]']");
+	By mulOptionThree = By.xpath("//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout");
 	
 //	Single Poll Elements
 	
@@ -206,13 +208,13 @@ public class Survey extends BaseSetUp{
 
 		driver.findElement(btnSubmit).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		String Msg = driver.findElement(morePolls).getText();
 		
 //		Verifying Condition
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		if (Msg.equals("More Polls/Surveys")) {
 			
@@ -245,13 +247,13 @@ public class Survey extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Select An Option ");
+		System.out.println("Entering Free Text Answer ");
 
-		waitForClickabilityOf(selectAnOption);
+		waitForClickabilityOf(enterFreeText);
 
-		driver.findElement(selectAnOption).clear();
+		driver.findElement(enterFreeText).clear();
 		
-		driver.findElement(selectAnOption).sendKeys("German");
+		driver.findElement(enterFreeText).sendKeys("German");
 				
 		Thread.sleep(2000);
 		
@@ -263,13 +265,13 @@ public class Survey extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Select An Option ");
+		System.out.println("Entering Free Text Answer ");
 
-		waitForClickabilityOf(selectAnOption);
+		waitForClickabilityOf(enterFreeText);
 
-		driver.findElement(selectAnOption).clear();
+		driver.findElement(enterFreeText).clear();
 		
-		driver.findElement(selectAnOption).sendKeys("Germany");
+		driver.findElement(enterFreeText).sendKeys("Germany");
 				
 		Thread.sleep(2000);
 		
@@ -279,13 +281,13 @@ public class Survey extends BaseSetUp{
 
 		driver.findElement(btnSubmit).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		String Msg = driver.findElement(morePolls).getText();
 		
 //		Verifying Condition
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		if (Msg.equals("More Polls/Surveys")) {
 			
@@ -347,13 +349,13 @@ public class Survey extends BaseSetUp{
 
 		driver.findElement(btnSubmit).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		String Msg = driver.findElement(morePolls).getText();
 		
 //		Verifying Condition
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		if (Msg.equals("More Polls/Surveys")) {
 			
@@ -415,13 +417,13 @@ public class Survey extends BaseSetUp{
 
 		driver.findElement(btnSubmit).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		String Msg = driver.findElement(morePolls).getText();
 		
 //		Verifying Condition
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		if (Msg.equals("More Polls/Surveys")) {
 			

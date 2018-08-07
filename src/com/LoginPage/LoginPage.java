@@ -46,10 +46,7 @@ public class LoginPage extends BaseSetUp{
 //	Verify Home Page Elements 
 	
 	By noOfOptions = By.id("item_image");
-	
-	
-	
-	
+		
 	
 	
 	public LoginPage(WebDriver driver) {

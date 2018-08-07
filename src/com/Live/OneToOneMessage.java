@@ -153,7 +153,7 @@ public class OneToOneMessage extends BaseSetUp{
 
 		driver.findElement(sendBtn).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 //      Verifying Condition 
 		

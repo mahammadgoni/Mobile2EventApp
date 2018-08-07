@@ -32,7 +32,7 @@ public class Schedule extends BaseSetUp{
 	
 	By timeTab = By.xpath("//*[@text='Time']");
 	
-	By session1st = By.xpath("//android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout");
+	By session1st = By.xpath("//android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[2]");
 	
 	By bookmark = By.xpath("//*[@content-desc='Bookmark']");
 	
@@ -64,9 +64,9 @@ public class Schedule extends BaseSetUp{
 	
 	By tracksTab = By.xpath("//*[@text='Tracks']");
 	
-	By liveMigration = By.xpath("//*[@text='Live Migration']");
+	By liveMigration = By.xpath("//android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.RelativeLayout");
 	
-	By platforms = By.xpath("//*[@text='Platforms']");
+	By platforms = By.xpath("//android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.RelativeLayout");
 	
 	By select1stTrackSesn = By.xpath("//android.widget.ListView/android.widget.LinearLayout[1]");
 	
@@ -204,6 +204,12 @@ public class Schedule extends BaseSetUp{
 		
 		System.out.println("Clicking On Close Rate Option");
 
+		waitForClickabilityOf(cancleRate);
+
+		driver.findElement(cancleRate).click();
+		
+		Thread.sleep(2000);
+		
 		waitForClickabilityOf(cancleRate);
 
 		driver.findElement(cancleRate).click();
@@ -413,6 +419,12 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
+		waitForClickabilityOf(cancleRate);
+
+		driver.findElement(cancleRate).click();
+		
+		Thread.sleep(2000);
+		
 		System.out.println("Clicking On Take Notes");
 
 		waitForClickabilityOf(takeNotes);
@@ -604,6 +616,15 @@ public class Schedule extends BaseSetUp{
 		waitForClickabilityOf(cancleRate);
 
 		driver.findElement(cancleRate).click();
+		
+		try {
+			waitForClickabilityOf(cancleRate);
+
+			driver.findElement(cancleRate).click();
+			
+		} catch (Exception e) {
+			
+		}
 		
 		Thread.sleep(2000);
 		

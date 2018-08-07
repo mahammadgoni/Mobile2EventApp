@@ -149,16 +149,16 @@ public class Sponsors extends BaseSetUp{
 		driver.findElement(clickOnSaveToContact).click();
 		
 		Thread.sleep(2000);
-		
-		System.out.println("Clicking on Bookmark Sponsors");
-
-		waitForClickabilityOf(clickOnBookmark);
-
-		driver.findElement(clickOnBookmark).click();
-		
-		Thread.sleep(2000);
-		
+				
 		try {
+			
+			System.out.println("Clicking on Bookmark Sponsors");
+
+			waitForClickabilityOf(clickOnBookmark);
+
+			driver.findElement(clickOnBookmark).click();
+			
+			Thread.sleep(2000);
 			
 			System.out.println("Clicking on Sponsors Website");
 
@@ -238,12 +238,18 @@ public class Sponsors extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Bookmark Sponsors");
+		try {
 
-		waitForClickabilityOf(clickOnBookmark);
+			System.out.println("Clicking on Bookmark Sponsors");
 
-		driver.findElement(clickOnBookmark).click();
-		
+			waitForClickabilityOf(clickOnBookmark);
+
+			driver.findElement(clickOnBookmark).click();
+			
+		} catch (Exception e) {
+			
+		}
+				
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking on Sponsors Website");
