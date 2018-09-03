@@ -229,11 +229,11 @@ public class PlayCenter extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on Making Friend");
+		System.out.println("Clicking on Location Map");
 
-		waitForClickabilityOf(clickOnMkFriendMap);
+		waitForClickabilityOf(clickOnLocationMap);
 
-		driver.findElement(clickOnMkFriendMap).click();
+		driver.findElement(clickOnLocationMap).click();
 		
 		Thread.sleep(2000);
 		

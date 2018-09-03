@@ -22,7 +22,6 @@ import com.Live.EventQA;
 import com.Live.LeaderBoard;
 import com.Live.OneToOneMessage;
 import com.Live.PhotoWall;
-import com.Live.PlayCenter;
 import com.Live.SocialWall;
 import com.Live.VideoWall;
 import com.LoginPage.LoginPage;
@@ -479,54 +478,54 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		
 	}
-	
-	@Test(priority = 29)
-	public void quizMapTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Quiz Map Test");
-		
-		new PlayCenter(driver).quizMap(userName, password);
-		
-		
-	}
-	
-	@Test(priority = 30)
-	public void makingFriendMapTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Making Friend Map Test");
-		
-		new PlayCenter(driver).makingFriendMap(userName, password);
-		
-		
-	}
-	
-	@Test(priority = 31)
-	public void locationMapTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Location Map Test");
-		
-		new PlayCenter(driver).locationMap(userName, password);
-		
-		
-	}
+//	
+//	@Test(priority = 29)
+//	public void quizMapTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Quiz Map Test");
+//		
+//		new PlayCenter(driver).quizMap(userName, password);
+//		
+//		
+//	}
+//	
+//	@Test(priority = 30)
+//	public void makingFriendMapTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Making Friend Map Test");
+//		
+//		new PlayCenter(driver).makingFriendMap(userName, password);
+//		
+//		
+//	}
+//	
+//	@Test(priority = 31)
+//	public void locationMapTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Location Map Test");
+//		
+//		new PlayCenter(driver).locationMap(userName, password);
+//		
+//		
+//	}
 	
 	@Test(priority = 32)
 	public void bookmarksTest() throws InterruptedException, IOException{
