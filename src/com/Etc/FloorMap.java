@@ -161,11 +161,19 @@ public class FloorMap extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Clicking on 1st Floor Map");
+		try {
+			
+			System.out.println("Clicking on 1st Floor Map");
 
-		waitForClickabilityOf(floorMap1stTitle);
+			waitForClickabilityOf(floorMap1stTitle);
+			
+			driver.findElement(floorMap1stTitle).click();
+			
+		} catch (Exception e) {
+			
+		}
 		
-		driver.findElement(floorMap1stTitle).click();
+
 		
 		Thread.sleep(2000);
 		
