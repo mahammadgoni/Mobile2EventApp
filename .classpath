@@ -3,11 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/5.4.0/java-client-5.0.4.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/ooxml-lib/curvesapi-1.04.jar"/>
-	<classpathentry kind="lib" path="Jars/selenium-java-3.6.0/client-combined-3.6.0-sources.jar"/>
-	<classpathentry kind="lib" path="Jars/selenium-java-3.6.0/client-combined-3.6.0.jar"/>
-	<classpathentry kind="lib" path="Jars/selenium-server-standalone-3.8.1.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/ooxml-lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/lib/commons-collections4-4.1.jar"/>
 	<classpathentry kind="lib" path="/Users/goni/Documents/workspace/WebSpiders/Mobile2EventApp/Jars/poi-3.17/lib/commons-logging-1.2.jar"/>
@@ -24,6 +20,20 @@
 	<classpathentry kind="lib" path="Jars/cglib-3.2.5.jar"/>
 	<classpathentry kind="lib" path="Jars/cglib-nodep-3.2.5.jar"/>
 	<classpathentry kind="lib" path="Jars/commons-lang3-3.4.jar"/>
-	<classpathentry kind="lib" path="Jars/java-client-6.0.0-BETA1.jar"/>
+	<classpathentry kind="lib" path="Jars/6.1.0/java-client-6.1.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="Jars/6.1.0/java-client-6.1.0-sources.jar"/>
+	<classpathentry kind="lib" path="Jars/6.1.0/java-client-6.1.0.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/client-combined-3.14.0-sources.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/client-combined-3.14.0.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-server-standalone-3.14.0.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/httpcore-4.4.9.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/okhttp-3.10.0.jar"/>
+	<classpathentry kind="lib" path="Jars/selenium-java-3.14.0/libs/okio-1.14.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

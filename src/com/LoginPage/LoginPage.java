@@ -6,7 +6,15 @@ import com.BaseSetup.BaseSetUp;
 
 public class LoginPage extends BaseSetUp{
 	
-	
+
+//	By emailId = By.id("ws.e2m.altofest:id/et_email");
+//	
+//	By pass = By.id("ws.e2m.altofest:id/et_password");
+//	
+//	By proceedBtn1 = By.id("ws.e2m.altofest:id/tv_proceed");
+//	
+//	By proceedBtn2 = By.id("ws.e2m.altofest:id/tv_proceed");
+		
 	By emailId = By.id("et_email");
 	
 	By pass = By.id("et_password");

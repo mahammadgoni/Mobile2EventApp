@@ -22,6 +22,7 @@ import com.Live.EventQA;
 import com.Live.LeaderBoard;
 import com.Live.OneToOneMessage;
 import com.Live.PhotoWall;
+import com.Live.PlayCenter;
 import com.Live.SocialWall;
 import com.Live.VideoWall;
 import com.LoginPage.LoginPage;
@@ -59,38 +60,38 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		sendMailReport();
 	}
 	
-	@Test(priority = 1)
-	public void uninstallAppTest() throws IOException{
-		
-		System.out.println("Executing : Uninstall Application Test");
-		
-		uninstallApp();	
-		
-	}
-	
-	@Test(priority = 2)
-	public void installAppTest() throws IOException{
-		
-		System.out.println("Executing : Install Application Test");
-				
-		installApp();
-		
-	}
-	
-	@Test(priority = 3)
-	public void loginToAccountTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Login to your Account Test");
-		
-		new LoginPage(driver).accountLogin(userName, password);
-		
-	}
+//	@Test(priority = 1)
+//	public void uninstallAppTest() throws IOException{
+//		
+//		System.out.println("Executing : Uninstall Application Test");
+//		
+//		uninstallApp();	
+//		
+//	}
+//	
+//	@Test(priority = 2)
+//	public void installAppTest() throws IOException{
+//		
+//		System.out.println("Executing : Install Application Test");
+//				
+//		installApp();
+//		
+//	}
+//	
+//	@Test(priority = 3)
+//	public void loginToAccountTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Login to your Account Test");
+//		
+//		new LoginPage(driver).accountLogin(userName, password);
+//		
+//	}
 //	
 //	@Test(priority = 4)
 //	public void forgotPasswordTest() throws InterruptedException, IOException{
@@ -137,21 +138,21 @@ public class E2MAppTestCases extends AndroidSetUp{
 //		new LoginPage(driver).changePassword(userName, "123456",password);
 //		
 //	}
-	
-	@Test(priority = 7)
-	public void homePageVerifyTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Home Page Verify Test");
-		
-		new LoginPage(driver).homePageVerify(userName, password);
-		
-	}
+//	
+//	@Test(priority = 7)
+//	public void homePageVerifyTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Home Page Verify Test");
+//		
+//		new LoginPage(driver).homePageVerify(userName, password);
+//		
+//	}
 	
 	@Test(priority = 8)
 	public void scheduleTimeTest() throws InterruptedException, IOException{
@@ -160,7 +161,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		String password =  getCellData(1, 7);
 		
-		prepareAndStartAppium();
+//		prepareAndStartAppium();
 		
 		System.out.println("Executing : Schedule Time Test");
 		
@@ -168,20 +169,20 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 	}
 	
-	@Test(priority = 9)
-	public void scheduleTracksLiveTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Schedule Tracks Live Test");
-		
-		new Schedule(driver).tracks(userName, password, "This is Automation Testing Live Track Session Note", "Is this Live tracks Session?","Live");
-		
-	}
+//	@Test(priority = 9)
+//	public void scheduleTracksLiveTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Schedule Tracks Live Test");
+//		
+//		new Schedule(driver).tracks(userName, password, "This is Automation Testing Live Track Session Note", "Is this Live tracks Session?","Live");
+//		
+//	}
 	
 	@Test(priority = 10)
 	public void scheduleTracksPlatformsTest() throws InterruptedException, IOException{
@@ -228,35 +229,35 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 	}
 	
-	@Test(priority = 13)
-	public void exhibitorNameTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Exhibitor Name Test");
-		
-		new Exhibitors(driver).exhibitorsName(userName, password);
-		
-	}
+//	@Test(priority = 13)
+//	public void exhibitorNameTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Exhibitor Name Test");
+//		
+//		new Exhibitors(driver).exhibitorsName(userName, password);
+//		
+//	}
 	
-	@Test(priority = 14)
-	public void exhibitorTypeTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Exhibitor Type Test");
-		
-		new Exhibitors(driver).exhibitorType(userName, password);
-		
-	}
+//	@Test(priority = 14)
+//	public void exhibitorTypeTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Exhibitor Type Test");
+//		
+//		new Exhibitors(driver).exhibitorType(userName, password);
+//		
+//	}
 	
 	@Test(priority = 15)
 	public void sponsorsNameTest() throws InterruptedException, IOException{
@@ -273,20 +274,20 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 	}
 	
-	@Test(priority = 16)
-	public void sponsorsTypeTest() throws InterruptedException, IOException{
-		
-		String userName =  getCellData(1, 6);
-		
-		String password =  getCellData(1, 7);
-		
-		prepareAndStartAppium();
-		
-		System.out.println("Executing : Sponsors Type Test");
-		
-		new Sponsors(driver).sponsorsType(userName, password);
-		
-	}
+//	@Test(priority = 16)
+//	public void sponsorsTypeTest() throws InterruptedException, IOException{
+//		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+//		
+//		prepareAndStartAppium();
+//		
+//		System.out.println("Executing : Sponsors Type Test");
+//		
+//		new Sponsors(driver).sponsorsType(userName, password);
+//		
+//	}
 	
 	@Test(priority = 17)
 	public void dropdownPollsTest() throws InterruptedException, IOException{
@@ -394,7 +395,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : One To One Message Test");
 		
-		new OneToOneMessage(driver).oneToOneMsg(userName, password, "Bumbel Bee Reporting");
+		new OneToOneMessage(driver).oneToOneMsg(userName, password, "The Pedeator Reporting");
 		
 		
 	}
@@ -478,54 +479,54 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		
 	}
-//	
-//	@Test(priority = 29)
-//	public void quizMapTest() throws InterruptedException, IOException{
-//		
-//		String userName =  getCellData(1, 6);
-//		
-//		String password =  getCellData(1, 7);
-//		
-//		prepareAndStartAppium();
-//		
-//		System.out.println("Executing : Quiz Map Test");
-//		
-//		new PlayCenter(driver).quizMap(userName, password);
-//		
-//		
-//	}
-//	
-//	@Test(priority = 30)
-//	public void makingFriendMapTest() throws InterruptedException, IOException{
-//		
-//		String userName =  getCellData(1, 6);
-//		
-//		String password =  getCellData(1, 7);
-//		
-//		prepareAndStartAppium();
-//		
-//		System.out.println("Executing : Making Friend Map Test");
-//		
-//		new PlayCenter(driver).makingFriendMap(userName, password);
-//		
-//		
-//	}
-//	
-//	@Test(priority = 31)
-//	public void locationMapTest() throws InterruptedException, IOException{
-//		
-//		String userName =  getCellData(1, 6);
-//		
-//		String password =  getCellData(1, 7);
-//		
-//		prepareAndStartAppium();
-//		
-//		System.out.println("Executing : Location Map Test");
-//		
-//		new PlayCenter(driver).locationMap(userName, password);
-//		
-//		
-//	}
+	
+	@Test(priority = 29)
+	public void quizMapTest() throws InterruptedException, IOException{
+		
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Quiz Map Test");
+		
+		new PlayCenter(driver).quizMap(userName, password);
+		
+		
+	}
+	
+	@Test(priority = 30)
+	public void makingFriendMapTest() throws InterruptedException, IOException{
+		
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Making Friend Map Test");
+		
+		new PlayCenter(driver).makingFriendMap(userName, password);
+		
+		
+	}
+	
+	@Test(priority = 31)
+	public void locationMapTest() throws InterruptedException, IOException{
+		
+		String userName =  getCellData(1, 6);
+		
+		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Location Map Test");
+		
+		new PlayCenter(driver).locationMap(userName, password);
+		
+		
+	}
 	
 	@Test(priority = 32)
 	public void bookmarksTest() throws InterruptedException, IOException{
@@ -554,7 +555,7 @@ public class E2MAppTestCases extends AndroidSetUp{
 		
 		System.out.println("Executing : Add Note Test");
 		
-		new Notes(driver).addNote(userName, password,"This test is for 3rd Iteration ");
+		new Notes(driver).addNote(userName, password,"This test is for Prd Iteration ");
 		
 		
 	}
@@ -715,6 +716,24 @@ public class E2MAppTestCases extends AndroidSetUp{
 		new Home(driver).home(userName, password);
 		
 	}
+	
+	@Test(priority = 44)
+	public void customResourcesTest() throws InterruptedException, IOException{
+		
+//		String userName =  getCellData(1, 6);
+//		
+//		String password =  getCellData(1, 7);
+		
+		prepareAndStartAppium();
+		
+		System.out.println("Executing : Custom Resources Test");
+		
+		new Resources(driver).customResources("kevinms@yopmail.com", "#e2m321");
+		
+		
+	}
+	
+	
 	
 	
 }

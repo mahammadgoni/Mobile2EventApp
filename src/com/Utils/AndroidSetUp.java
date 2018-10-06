@@ -23,6 +23,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+@SuppressWarnings("deprecation")
 public class AndroidSetUp extends ReadAndWriteTestData{
 	@SuppressWarnings("rawtypes")
 	protected static AndroidDriver driver;
@@ -58,6 +59,8 @@ public class AndroidSetUp extends ReadAndWriteTestData{
 		capabilities.setCapability("platformName", "Android");
 
 		capabilities.setCapability("platformVersion", PlatformVersion);
+		
+		capabilities.setCapability("automationName", "uiautomator2");
 
 		capabilities.setCapability("deviceName", DeviceName);
 
@@ -69,8 +72,10 @@ public class AndroidSetUp extends ReadAndWriteTestData{
 
 		capabilities.setCapability("appActivity", activityName);
 		
-//		capabilities.setCapability("automationName", "uiautomator2");
-//		
+		capabilities.setCapability("unicodeKeyboard", true);
+		
+		capabilities.setCapability("resetKeyboard", true);
+		
 //		capabilities.setCapability("newCommandTimeout", "160");
 		
 //		capabilities.setCapability("noResetValue", "false");
@@ -78,6 +83,8 @@ public class AndroidSetUp extends ReadAndWriteTestData{
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
+		
+//		driver.hideKeyboard();
 
 	}
 	

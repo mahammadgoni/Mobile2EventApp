@@ -50,6 +50,20 @@ public class Resources extends BaseSetUp{
 	
 	By sharePreAndNotes = By.id("upld_lib");
 	
+//	Custom Resources Elements
+	
+	By clickOnCustomResouce = By.xpath("//android.view.View/android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout");
+	
+	By clickOnInAppResources = By.xpath("//*[@text='Automation InApp']");
+	
+	By clickOnInAppUrl = By.id("rl_main_web");
+	
+	By clickOnOutsideResources = By.xpath("//*[@text='Automation Outside']");
+	
+	By clickOnOutsideUrl = By.id("button_bar");
+	
+	
+	
 	
 	
 
@@ -298,7 +312,75 @@ public class Resources extends BaseSetUp{
 		
 		
 		
+		
+		
+		
 		return new Resources(driver);
+	}
+	
+//	Custom Resources Method
+	
+	public Resources customResources(String userName,String password) throws InterruptedException{
+		
+		commonActivity(userName, password);
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Custom Resources Folder");
+
+		waitForClickabilityOf(clickOnCustomResouce);
+
+		driver.findElement(clickOnCustomResouce).click();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on in App Custom Resouces");
+
+		waitForClickabilityOf(clickOnInAppResources);
+
+		driver.findElement(clickOnInAppResources).click();
+		
+		boolean InAppUrl = driver.findElement(clickOnInAppUrl).isDisplayed();
+		
+		if (InAppUrl==true) {
+			
+			System.out.println("In App Custom Resoucrs Opened Successfull");
+			
+		} else {
+			
+			System.out.println("Failed to open In App Custom Resoucrs");
+
+		}
+		
+		driver.navigate().back();
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Clicking on Outside Custom Resouces");
+
+		waitForClickabilityOf(clickOnOutsideResources);
+
+		driver.findElement(clickOnOutsideResources).click();
+		
+		Thread.sleep(2000);
+		
+		boolean OutsideUrl = driver.findElement(clickOnOutsideUrl).isDisplayed();
+		
+		if (OutsideUrl==true) {
+			
+			System.out.println("In App Custom Resoucrs Opened Successfull");
+			
+		} else {
+			
+			System.out.println("Failed to open In App Custom Resoucrs");
+
+		}
+		
+		driver.navigate().back();
+	
+		
+		return new Resources(driver);
+		
 	}
 
 }

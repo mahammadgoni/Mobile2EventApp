@@ -144,7 +144,7 @@ public class Notes extends BaseSetUp{
 
 		driver.findElement(saveNoteBtn).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 //      Verifying Condition 
 		

@@ -10,9 +10,17 @@ import io.appium.java_client.android.AndroidKeyCode;
 
 public class Schedule extends BaseSetUp{
 	
+//	By emailId = By.xpath("//*[@text='Email Address']");
+	
 	By emailId = By.id("et_email");
 	
 	By pass = By.id("et_password");
+	
+//	By pass = By.xpath("//*[@text='Enter Password']");
+	
+//	By proceedBtn1 = By.xpath("//*[@text='Proceed']");
+	
+//	By proceedBtn2 = By.xpath("//*[@text='Proceed']");
 	
 	By proceedBtn1 = By.id("tv_proceed");
 	
@@ -23,6 +31,8 @@ public class Schedule extends BaseSetUp{
 	By submitBtn = By.id("tv_submit");
 	
 	By menu = By.id("btn_home");
+	
+	By allow = By.xpath("//*[@text='ALLOW']");
 	
 //	Schedule Elements
 	
@@ -46,9 +56,9 @@ public class Schedule extends BaseSetUp{
 	
 	By addNote = By.id("et_addnote_detail");
 	
-	By addNotePlusBtn = By.id("btn_right");
+	By addNotePlusBtn = By.xpath("//*[@content-desc='Add note']");
 	
-	By saveNote = By.id("btn_right");
+	By saveNote = By.xpath("//*[@content-desc='Save note']");
 	
 	By askAQuestion = By.xpath("//*[@text='Ask A Question']");
 	
@@ -127,7 +137,7 @@ public class Schedule extends BaseSetUp{
 
 		driver.findElement(proceedBtn2).click();
 		
-		Thread.sleep(4000);
+		Thread.sleep(10000);
 		
 		System.out.println("Clicking on Menu Option ");
 
@@ -155,7 +165,7 @@ public class Schedule extends BaseSetUp{
 	
 //	Checking Time Method
 	
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "deprecation" })
 	public Schedule time(String userName,String password,String Notes,String Question) throws InterruptedException{
 		
 		commonActivity(userName, password);
@@ -192,6 +202,18 @@ public class Schedule extends BaseSetUp{
 
 		driver.findElement(addToCalender).click();
 		
+		try {
+			
+			System.out.println("Clicking On Allow to Add to Calendar");
+
+			waitForClickabilityOf(allow);
+
+			driver.findElement(allow).click();
+			
+		} catch (Exception e) {
+			
+		}
+		
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking On Rate");
@@ -224,14 +246,33 @@ public class Schedule extends BaseSetUp{
 		
 		Thread.sleep(2000);
 		
-		System.out.println("Adding Notes");
+		boolean EnterNote = driver.findElement(addNote).isDisplayed();
+		
+		Thread.sleep(2000);
+		
+		if (EnterNote==true) {
+			
+			System.out.println("Adding Notes");
 
-		waitForClickabilityOf(addNote);
+						
+		} else {
+			
+			System.out.println("Clicking On Plus Note Button");
+
+			waitForClickabilityOf(addNotePlusBtn);
+
+			driver.findElement(addNotePlusBtn).click();	
+
+		}
+		
+		Thread.sleep(2000);
+		
+		System.out.println("Entering Notes");
 
 		driver.findElement(addNote).clear();
 		
 		driver.findElement(addNote).sendKeys(Notes);
-		
+				
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking On Right Simbol to Save Note");
@@ -239,6 +280,10 @@ public class Schedule extends BaseSetUp{
 		waitForClickabilityOf(saveNote);
 
 		driver.findElement(saveNote).click();
+		
+		Thread.sleep(2000);
+		
+		driver.navigate().back();
 		
 		Thread.sleep(2000);
 		
@@ -259,8 +304,12 @@ public class Schedule extends BaseSetUp{
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking Back Button");
+		
+		driver.navigate().back();
+		
+//		((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.BACK));		
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+//		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
 		
 		Thread.sleep(2000);
 		
@@ -480,8 +529,10 @@ public class Schedule extends BaseSetUp{
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking Back Button");
+		
+		driver.navigate().back();
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+//		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
 		
 		Thread.sleep(2000);
 		
@@ -502,8 +553,10 @@ public class Schedule extends BaseSetUp{
 		Thread.sleep(2000);
 		
 		System.out.println("Clicking Back Button");
+		
+		driver.navigate().back();
 
-		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+//		((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
 		
 		Thread.sleep(2000);
 		
